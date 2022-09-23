@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\exel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\ExcelExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class PendaftaranController extends Controller
 {
@@ -16,6 +20,16 @@ class PendaftaranController extends Controller
         ->get();
 
         return view('crud_pendaftaran.index_pendaftaran', ["pendaftaran" => $pendaftaran]);
+    }
+
+    public function excelexport(){
+
+        $data = DB::table('pendaftarans as a')
+        ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
+        ->join('tm_divisis as c', 'a.id_divisi', '=', 'c.id')
+        ->select('b.periode', 'a.nama_lengkap', 'a.id_no', 'c.divisi', 'a.created_at', 'a.updated_at')
+        ->get();
+        return Excel::download(new ExcelExport($data), 'CalonAnggotaKopasusIT.xlsx');
     }
 
     public function edit($id) 

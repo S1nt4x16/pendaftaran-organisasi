@@ -96,6 +96,7 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/edit/{id}', [PendaftaranController::class, 'edit']);
         Route::post('/update', [PendaftaranController::class, 'update']);
         Route::delete('/delete/{id}', [PendaftaranController::class, 'delete']);
+        Route::get('/excelexport', [PendaftaranController::class, 'excelexport'])->name('excelexport');
     });
 
 
