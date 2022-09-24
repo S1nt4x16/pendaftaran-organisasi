@@ -59,8 +59,8 @@ class ExcelExport implements FromCollection, WithMapping, WithHeadings, WithStyl
     public function styles(Worksheet $sheet)
     {
         $sheet->getStyle('A1')->getFont()->setBold(true);
-        $sheet->getStyle('A3:J3')->getFont()->setBold(true);
-        $sheet->mergeCells('A1:J1');
+        $sheet->getStyle('A3:G3')->getFont()->setBold(true);
+        $sheet->mergeCells('A1:G1');
         $sheet->getStyle('A1')->getAlignment()->setHorizontal('center');
     }
 

@@ -6,8 +6,7 @@ Welcome To Master Data Pendaftaran
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('excelexport') }}" class="btn btn-success">Download Data</a>
-        <a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Import</a>
+      <button type="button" class="btn btn-success" data-coreui-toggle="modal" data-coreui-target="#download" data-coreui-name="Calon Anggota Kopasus IT" data-coreui-url="{{ route('excelexport') }}">Download Data</button>
     </div>
     <div class="card-body">
     <table id="table-pendaftaran">
@@ -66,25 +65,26 @@ Welcome To Master Data Pendaftaran
     </div>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <div class="modal fade" id="download" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="get" id="form-download">
+            @csrf
+            <div class="modal-body">
+                <p id="tanya-download"></p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" data-coreui-dismiss="modal">Yes</button>
+            </div>
       </div>
     </div>
   </div>
-</div>
 @endsection
 
 @section('footer')
@@ -109,6 +109,24 @@ hapus.addEventListener('show.coreui.modal', event => {
   formHapus.action = url
 })
 </script>
+
+<script>
+const download = document.getElementById('download')
+download.addEventListener('show.coreui.modal', event => {
+  const button = event.relatedTarget
+  const name = button.getAttribute('data-coreui-name')
+  const url = button.getAttribute('data-coreui-url')
+  const title = download.querySelector('.modal-title')
+  const tanya = download.querySelector('.modal-body #tanya-download')
+  const formDownload = download.querySelector('#form-download')
+
+  title.textContent = 'Mendownload ' + name 
+  tanya.textContent = 'Yakin Akan Mendownload File ' + name + ' ?'
+  formDownload.action = url
+})
+</script>
+
+<script src="{{ asset('chart.js/dist/chart.min.js') }}"></script>
 @endsection
 
 
