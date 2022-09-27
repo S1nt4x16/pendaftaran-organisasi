@@ -125,8 +125,6 @@ download.addEventListener('show.coreui.modal', event => {
   formDownload.action = url
 })
 </script>
-
-<script src="{{ asset('chart.js/dist/chart.min.js') }}"></script>
 @endsection
 
 

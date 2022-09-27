@@ -9,6 +9,9 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $period = now()->format('Y');
+        $periodSub1 = now()->subYear()->format('Y');
+        $periodSub2 = now()->subYears(2)->format('Y');
         $periode = DB::table('tm_periodes')
             ->select("periode")
             ->where('aktif', 'Y')
@@ -16,21 +19,32 @@ class HomeController extends Controller
         $jml_pendaftaran = DB::table('pendaftarans as a')
             ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
             ->select('id')
+            ->where('b.periode', $period)
+            ->count();
+        $jml_pendaftaran1 = DB::table('pendaftarans as a')
+            ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
+            ->select('id')
+            ->where('b.periode', $periodSub1)
+            ->count();
+        $jml_pendaftaran2 = DB::table('pendaftarans as a')
+            ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
+            ->select('id')
+            ->where('b.periode', $periodSub2)
             ->count();
        $jml_divisi_rpl = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->select('id')
-            ->where('id_divisi', '1')
+            ->join('tm_periodes as c', 'a.id_periode', '=',  'c.id')
+            ->where(['b.divisi', 'RPL'],['c.periode', $period])
             ->count();
        $jml_divisi_tkj = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->select('id')
-            ->where('id_divisi', '2')
+            ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
+            ->where(['b.divisi', 'TKJ'], ['c.periode', $periodSub1])
             ->count();
        $jml_divisi_mm = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->select('id')
-            ->where('id_divisi', '3')
+            ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
+            ->where(['b.divisi', 'MM'],['c.periode', $periodSub2])
             ->count();
         $jenis_kelamin_l = DB::table('pendaftarans')
             ->select("id")
@@ -85,7 +99,12 @@ class HomeController extends Controller
         return view('home',
             [
                 'periode' => $periode,
-                'pendaftaran_jml' => $jml_pendaftaran,
+                'period' => $period,
+                'periodSub1' => $periodSub1,
+                'periodSub2' => $periodSub2,
+                'jml_pendaftaran' => $jml_pendaftaran,
+                'jml_pendaftaran1' => $jml_pendaftaran1,
+                'jml_pendaftaran2' => $jml_pendaftaran2,
                 'divisi_jml_rpl' => $jml_divisi_rpl,
                 'divisi_jml_tkj' => $jml_divisi_tkj,
                 'divisi_jml_mm' => $jml_divisi_mm,
