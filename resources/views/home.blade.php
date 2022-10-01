@@ -15,7 +15,7 @@ Welcome To Home
                         </div>
                         <div class="card-body">
                             <p>Jumlah Pendaftar Saat Ini</p>
-                            <canvas id="myChart" width="200" height="125"></canvas>
+                            <canvas id="myChart" width="200px" height="125px"></canvas>
                         </div>
                     </div>
                 </div>
@@ -39,23 +39,24 @@ Welcome To Home
                             </div>
                             <div class="card-body">
                                 <p>Jumlah Pendaftar Per Divisi</p>
-                                <canvas id="myChart1" width="200" height="125"></canvas>
+                                <canvas id="myChart1" width="200px" height="125px"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="card bg-success">
-                            <div class="card-header"><h3>Jumlah Siswa</h3></div>
-                            <div class="card-body"><p>Jumlah Siswa Laki-laki Dan Perempuan</p>
-                            <div class="mb-2">
-                                <p>1.) Laki-laki = {{ $laki }}</p>
-                                <p>1.) Perempuan = {{ $perempuan }}</p>
-                            </div></div>
+                            <div class="card-header">
+                                <h3>Jumlah Siswa</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
+                                <canvas id="myChart2" width="200px" height="125px"></canvas>
+                            </div>
                         </div>
                     </div>
-                
+
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" style="margin-top:20px;">
                         <div class="card bg-success">
                             <div class="card-header"><h3>Agama</h3></div>
                             <div class="card-body">
@@ -73,11 +74,15 @@ Welcome To Home
                     </div>
                     <div class="col-lg-3">
                         <div class="card bg-success">
-                            <h3>Izin Orang Tua<sup style="font-size: 20px"></sup></h3>
+                            <div class="card-header">
+                                <h3>Izin Orang Tua</h3>
+                            </div>
+                            <div class="card-body">
                             <p>Perizinan Terkait Orang Tua</p>
-                            <div class="mb-2">
-                                <p>1.) Diizikan = {{ $ya }}</p>
-                                <p>2.) Tidak Diizinkan = {{ $tidak }}</p>
+                                <div class="mb-2">
+                                    <p>1.) Diizikan = {{ $ya }}</p>
+                                    <p>2.) Tidak Diizinkan = {{ $tidak }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,11 +128,41 @@ Welcome To Home
     const ctxx = document.getElementById('myChart1').getContext('2d');
     const myChart1 = new Chart(ctxx, {
         type: 'line',
-        data2: {
-            labels: [{{ $periodSub2 }}, {{ $periodSub1 }}, {{ $period }}],
+        data: {
+            labels: [{{ $divisi_jml_rpl }}, {{ $divisi_jml_tkjj }}, {{ $divisi_jml_mmm }}],
             datasets: [{
                 label: 'Divisi Calon Anggota Kopasus IT',
                 data: [{{ $divisi_jml_mm }}, {{ $divisi_jml_tkj }}, {{ $divisi_jml_rpl }}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxxx = document.getElementById('myChart2').getContext('2d');
+    const myChart2 = new Chart(ctxxx, {
+        type: 'line',
+        data: {
+            labels: [{{ $periodSub1 }}, {{ $period }}],
+            datasets: [{
+                label: 'Jenis Kelamin Calon Anggota Kopasus IT',
+                data: [{{ $laki }}, {{ $perempuan }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
