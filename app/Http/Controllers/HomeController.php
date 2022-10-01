@@ -18,33 +18,33 @@ class HomeController extends Controller
             ->first();
         $jml_pendaftaran = DB::table('pendaftarans as a')
             ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
-            ->select('id')
+            ->select('a.id')
             ->where('b.periode', $period)
             ->count();
         $jml_pendaftaran1 = DB::table('pendaftarans as a')
             ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
-            ->select('id')
+            ->select('a.id')
             ->where('b.periode', $periodSub1)
             ->count();
         $jml_pendaftaran2 = DB::table('pendaftarans as a')
             ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
-            ->select('id')
+            ->select('a.id')
             ->where('b.periode', $periodSub2)
             ->count();
        $jml_divisi_rpl = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->join('tm_periodes as c', 'a.id_periode', '=',  'c.id')
-            ->where(['b.divisi', 'RPL'],['c.periode', $period])
+            ->where([['b.divisi', 'RPL'],['c.periode', $period]])
             ->count();
        $jml_divisi_tkj = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
-            ->where(['b.divisi', 'TKJ'], ['c.periode', $periodSub1])
+            ->where([['b.divisi', 'TKJ'], ['c.periode', $periodSub1]])
             ->count();
        $jml_divisi_mm = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
-            ->where(['b.divisi', 'MM'],['c.periode', $periodSub2])
+            ->where([['b.divisi', 'MM'],['c.periode', $periodSub2]])  
             ->count();
         $jenis_kelamin_l = DB::table('pendaftarans')
             ->select("id")

@@ -45,19 +45,20 @@ Welcome To Home
                     </div>
                     <div class="col-lg-3">
                         <div class="card bg-success">
-                            <h3>Jumlah Siswa<sup style="font-size: 20px"></sup></h3>
-                            <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
+                            <div class="card-header"><h3>Jumlah Siswa</h3></div>
+                            <div class="card-body"><p>Jumlah Siswa Laki-laki Dan Perempuan</p>
                             <div class="mb-2">
                                 <p>1.) Laki-laki = {{ $laki }}</p>
                                 <p>1.) Perempuan = {{ $perempuan }}</p>
-                            </div>
+                            </div></div>
                         </div>
                     </div>
                 
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="card bg-success">
-                            <h3>Agama<sup style="font-size: 20px"></sup></h3>
+                            <div class="card-header"><h3>Agama</h3></div>
+                            <div class="card-body">
                             <p>Jumlah Agama Tiap Pendaftar</p>
                             <div class="mb-2">
                                 <p>1.) Islam = {{ $islam }}</p>
@@ -66,6 +67,7 @@ Welcome To Home
                                 <p>4.) Hindu = {{ $hindu }}</p>
                                 <p>5.) Buddha = {{ $buddha }}</p>
                                 <p>6.) Konghucu = {{ $konghucu }}</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -117,15 +119,14 @@ Welcome To Home
             }
         }
     });
-</script>
-<script type="text/javascript">
-    const ctx = document.getElementById('myChart1').getContext('2d');
-    const myChart1 = new Chart(ctx, {
+
+    const ctxx = document.getElementById('myChart1').getContext('2d');
+    const myChart1 = new Chart(ctxx, {
         type: 'line',
-        data: {
+        data2: {
             labels: [{{ $periodSub2 }}, {{ $periodSub1 }}, {{ $period }}],
             datasets: [{
-                label: 'Pendaftar Calon Anggota Kopasus IT',
+                label: 'Divisi Calon Anggota Kopasus IT',
                 data: [{{ $divisi_jml_mm }}, {{ $divisi_jml_tkj }}, {{ $divisi_jml_rpl }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
