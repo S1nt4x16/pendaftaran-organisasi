@@ -16,6 +16,15 @@ class HomeController extends Controller
             ->select("periode")
             ->where('aktif', 'Y')
             ->first();
+        $divisi = DB::table('tm_divisis')
+            ->select("divisi")
+            ->get();
+        $agama = DB::table('tm_agamas')
+            ->select("agama")
+            ->get();
+        $izin_ortu = DB::table('tm_izin_ortus')
+            ->select("izin_ortu")
+            ->get();
         $jml_pendaftaran = DB::table('pendaftarans as a')
             ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id' )
             ->select('a.id')
@@ -33,41 +42,26 @@ class HomeController extends Controller
             ->count();
        $jml_divisi_rpl = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->join('tm_periodes as c', 'a.id_periode', '=',  'c.id')
-            ->where([['b.divisi', 'RPL'],['c.periode', $period]])
-            ->count();
-       $jml_divisi_rpll = DB::table('pendaftarans as a')
-            ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->select('a.id')
-            ->where('id_divisi', '1')
-            ->get();
+            ->where('b.divisi', 'RPL')
+            ->count();
        $jml_divisi_tkj = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
-            ->where([['b.divisi', 'TKJ'], ['c.periode', $periodSub1]])
-            ->count();
-       $jml_divisi_tkjj = DB::table('pendaftarans as a')
-            ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->select('a.id')
-            ->where('id_divisi', '2')
-            ->get();
+            ->where('b.divisi', 'TKJ')
+            ->count();
        $jml_divisi_mm = DB::table('pendaftarans as a')
             ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
-            ->join('tm_periodes as c', 'a.id_periode', '=', 'c.id')
-            ->where([['b.divisi', 'MM'],['c.periode', $periodSub2]])  
-            ->count();
-       $jml_divisi_mmm = DB::table('pendaftarans as a')
-            ->join('tm_divisis as b', 'a.id_divisi', '=', 'b.id' )
             ->select('a.id')
-            ->where('id_divisi', '3')  
-            ->get();
-        $jenis_kelamin_l = DB::table('pendaftarans as a')
-            ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
-            ->where([['jenis_kelamin', 'L'],['b.periode', $period]])
+            ->where('b.divisi', 'MM')  
             ->count();
-        $jenis_kelamin_p = DB::table('pendaftarans as a')
-            ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
-            ->where([['jenis_kelamin', 'P'], ['b.periode', $periodSub1]])
+        $jenis_kelamin_l = DB::table('pendaftarans')
+            ->select('id')
+            ->where('jenis_kelamin', 'L')
+            ->count();
+        $jenis_kelamin_p = DB::table('pendaftarans')
+            ->select('id')
+            ->where('jenis_kelamin', 'P')
             ->count();
         $agama_i = DB::table('pendaftarans as a')
             ->join('tm_agamas as b', 'a.id_agama', '=', 'b.id' )
@@ -114,6 +108,9 @@ class HomeController extends Controller
         return view('home',
             [
                 'periode' => $periode,
+                'divisi' => $divisi,
+                'agama' => $agama,
+                'izin_ortu' => $izin_ortu,
                 'period' => $period,
                 'periodSub1' => $periodSub1,
                 'periodSub2' => $periodSub2,
@@ -123,9 +120,6 @@ class HomeController extends Controller
                 'divisi_jml_rpl' => $jml_divisi_rpl,
                 'divisi_jml_tkj' => $jml_divisi_tkj,
                 'divisi_jml_mm' => $jml_divisi_mm,
-                'divisi_jml_rpll' => $jml_divisi_rpll,
-                'divisi_jml_tkjj' => $jml_divisi_tkjj,
-                'divisi_jml_mmm' => $jml_divisi_mmm,
                 'laki' => $jenis_kelamin_l,
                 'perempuan' => $jenis_kelamin_p,
                 'islam' => $agama_i,

@@ -4,27 +4,56 @@ Welcome To Home
 @endsection
 
 @section('content')
+<style>
+.jumlah {
+    width: 390px ;
+    margin-top:20px;
+    background-color: green;
+}
+
+.periode {
+    height: 275px;
+}
+
+.agama {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 390px;
+}
+
+.ortu {
+    margin-top: 20px;
+    margin-left: 18px;
+    width: 390px;
+    background-color: #2B4865;
+}
+
+.pen {
+    background-color: #256D85;
+}
+</style>
 <div class="card">
     <div class="card-body">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="card bg-info">
+                <div class="col-lg-4">
+                    <div class="card pen">
                         <div class="card-header">
                             <h3>Pendaftar</h3>
                         </div>
                         <div class="card-body">
                             <p>Jumlah Pendaftar Saat Ini</p>
-                            <canvas id="myChart" width="200px" height="125px"></canvas>
+                            <canvas id="myChart" width="200px" height="80px"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="card bg-success">
+                <div class="col-lg-4">
+                    <div class="card bg-secondary periode">
                         <div class="card-header">
                             <h3>Periode</h3>
                         </div>
                         <div class="card-body">
+                            <br>
                             <p>Periode Aktif</p>
                             <p><b>- {{ $periode->periode }}</b></p>
                             <p>Jumlah Anggota Aktif</p>
@@ -32,57 +61,49 @@ Welcome To Home
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-3">
-                        <div class="card bg-secondary">
+                    <div class="col-lg-4">
+                        <div class="card bg-warning">
                             <div class="card-header">
                                 <h3>Divisi</h3>
                             </div>
                             <div class="card-body">
                                 <p>Jumlah Pendaftar Per Divisi</p>
-                                <canvas id="myChart1" width="200px" height="125px"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card bg-success">
-                            <div class="card-header">
-                                <h3>Jumlah Siswa</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
-                                <canvas id="myChart2" width="200px" height="125px"></canvas>
+                                <canvas id="myChart1" width="200px" height="80px"></canvas>
                             </div>
                         </div>
                     </div>
 
                 <div class="row">
-                    <div class="col-lg-3" style="margin-top:20px;">
-                        <div class="card bg-success">
-                            <div class="card-header"><h3>Agama</h3></div>
-                            <div class="card-body">
-                            <p>Jumlah Agama Tiap Pendaftar</p>
-                            <div class="mb-2">
-                                <p>1.) Islam = {{ $islam }}</p>
-                                <p>2.) Protestan = {{ $protestan }}</p>
-                                <p>3.) Katholik = {{ $katholik }}</p>
-                                <p>4.) Hindu = {{ $hindu }}</p>
-                                <p>5.) Buddha = {{ $buddha }}</p>
-                                <p>6.) Konghucu = {{ $konghucu }}</p>
+                <div class="col-lg-4">
+                        <div class="card jumlah">
+                            <div class="card-header">
+                                <h3>Jumlah Siswa</h3>
                             </div>
+                            <div class="card-body">
+                                <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
+                                <canvas id="myChart2" width="200px" height="80px"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="card bg-success">
+                    <div class="col-lg-4">
+                        <div class="card bg-light agama">
+                            <div class="card-header">
+                                <h3>Agama</h3>
+                            </div>
+                            <div class="card-body">
+                            <p>Jumlah Agama Tiap Pendaftar</p>
+                            <canvas id="myChart3" width="200px" height="85px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card ortu">
                             <div class="card-header">
                                 <h3>Izin Orang Tua</h3>
                             </div>
                             <div class="card-body">
                             <p>Perizinan Terkait Orang Tua</p>
-                                <div class="mb-2">
-                                    <p>1.) Diizikan = {{ $ya }}</p>
-                                    <p>2.) Tidak Diizinkan = {{ $tidak }}</p>
-                                </div>
+                                <canvas id="myChart4" width="200px" height="85px"></canvas>
                             </div>
                         </div>
                     </div>
@@ -129,10 +150,14 @@ Welcome To Home
     const myChart1 = new Chart(ctxx, {
         type: 'line',
         data: {
-            labels: [{{ $divisi_jml_rpl }}, {{ $divisi_jml_tkjj }}, {{ $divisi_jml_mmm }}],
+            labels: [
+                @foreach($divisi as $d)
+                    '{{ $d->divisi }}',
+                @endforeach
+            ],
             datasets: [{
                 label: 'Divisi Calon Anggota Kopasus IT',
-                data: [{{ $divisi_jml_mm }}, {{ $divisi_jml_tkj }}, {{ $divisi_jml_rpl }}],
+                data: [{{ $divisi_jml_rpl }}, {{ $divisi_jml_tkj }}, {{ $divisi_jml_mm }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -159,10 +184,78 @@ Welcome To Home
     const myChart2 = new Chart(ctxxx, {
         type: 'line',
         data: {
-            labels: [{{ $periodSub1 }}, {{ $period }}],
+            labels: ['Laki-Laki', 'Perempuan'],
             datasets: [{
                 label: 'Jenis Kelamin Calon Anggota Kopasus IT',
                 data: [{{ $laki }}, {{ $perempuan }}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxxxx = document.getElementById('myChart3').getContext('2d');
+    const myChart3 = new Chart(ctxxxx, {
+        type: 'line',
+        data: {
+            labels: [
+                @foreach($agama as $a)
+                    '{{ $a->agama }}',
+                @endforeach
+            ],
+            datasets: [{
+                label: 'Agama Calon Anggota Kopasus IT',
+                data: [{{ $islam }}, {{ $katholik }}, {{ $protestan }}, {{ $hindu }}, {{ $buddha }}, {{ $konghucu }}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxxxxx = document.getElementById('myChart4').getContext('2d');
+    const myChart4 = new Chart(ctxxxxx, {
+        type: 'line',
+        data: {
+            labels: [
+                @foreach($izin_ortu as $i)
+                    '{{ $i->izin_ortu }}',
+                @endforeach
+            ],
+            datasets: [{
+                label: 'Perizinan Calon Anggota Kopasus IT',
+                data: [{{ $ya }}, {{ $tidak }},],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
