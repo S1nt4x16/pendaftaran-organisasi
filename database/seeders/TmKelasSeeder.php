@@ -57,7 +57,7 @@ class TmKelasSeeder extends Seeder
             ],
             [
                 
-                'kelas' => "X.IPS-4",
+                'kelas' => "X.P.A-1",
                 "created_at" => now()
             ],
             [
@@ -147,6 +147,16 @@ class TmKelasSeeder extends Seeder
             ],
             [
                 
+                'kelas' => "XI.IPS-4",
+                "created_at" => now()
+            ],
+            [
+                
+                'kelas' => "XI.P.A-1",
+                "created_at" => now()
+            ],
+            [
+                
                 'kelas' => "XI.U.A-1",
                 "created_at" => now()
             ],
@@ -172,27 +182,17 @@ class TmKelasSeeder extends Seeder
             ],
             [
                 
-                'kelas' => "XI.U.A-6",
-                "created_at" => now()
-            ],
-            [
-                
-                'kelas' => "XI.U.A-7",
-                "created_at" => now()
-            ],
-            [
-                
-                'kelas' => "XI.U.A-8",
-                "created_at" => now()
-            ],
-            [
-                
                 'kelas' => "XI.U.S-1",
                 "created_at" => now()
             ],
             [
                 
                 'kelas' => "XI.U.S-2",
+                "created_at" => now()
+            ],
+            [
+                
+                'kelas' => "XI.U.S-3",
                 "created_at" => now()
             ],
             [
@@ -261,6 +261,16 @@ class TmKelasSeeder extends Seeder
             [
                 
                 'kelas' => "XII.U.A-6",
+                "created_at" => now()
+            ],
+            [
+                
+                'kelas' => "XII.U.A-7",
+                "created_at" => now()
+            ],
+            [
+                
+                'kelas' => "XII.U.A-8",
                 "created_at" => now()
             ],
             [

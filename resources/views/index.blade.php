@@ -18,6 +18,7 @@
                 <h1>
                     Form Pendaftaran Kopasus IT
                 </h1>
+                @include('layouts.message')
                 <div class="col-4">
                     <a href="http://127.0.0.1:8000/login" class="btn btn-large btn-primary"><i class="fas fa-plus"></i>Login</a>
                 </div>

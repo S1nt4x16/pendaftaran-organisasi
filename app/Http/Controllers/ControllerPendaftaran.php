@@ -51,6 +51,13 @@ class ControllerPendaftaran extends Controller
         $hpOrtu = $request->input('hp_ortu');
         $akunIg = $request->input('akun_ig');
 
+        $validasi = DB::table('pendaftarans')
+            ->where([['nama_lengkap', $request->nama_lengkap], ['id_divisi', $request->divisi]])
+            ->count();
+        if (!empty($validasi)) {
+            return redirect()->back()->with('error', 'Menambahkan Data Sudah Ada');
+        }
+
         $idPeriode = DB::table('tm_periodes')
             ->select("id")
             ->where('aktif', 'Y')

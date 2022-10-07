@@ -18,43 +18,39 @@ class TmWalasSeeder extends Seeder
         $tws =
             [
                 [
-                    'walas' => "SUPRIYADI, S.Kom.",
+                    'walas' => "FIKRI MAULANA RIDHO, S.PD.",
                     "created_at" => now()
                 ],
                 [
 
-                    'walas' => "N. SANTI SITI N., S.PD.",
+                    'walas' => "IKA MUHARYANI, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "DIANA MUSTIKA SARI, S.Pd.",
-                    "created_at" => now()
-                ],
-                [
-
-                    'walas' => "MOCHAMAD ILHAM LAHIA, S.PAR.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "TITI RAHMAWATI, S.SI.",
+                    'walas' => "ADAM JULIO WASKITO, S.PD.",
                     "created_at" => now()
                 ],
                 [
 
-                    'walas' => "ADITYA DWI NUGROHO, S.PD.",
+                    'walas' => "AHMAD RIFAI, S.AG.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "MUKTI ALI, S.PD.",
+                    'walas' => "ANNISA MARHEKIYANA, S.PD.",
                     "created_at" => now()
                 ],
                 [
 
-                    'walas' => "GIYANTI, S.Pd.",
+                    'walas' => "RIZKY JULIAN PANGESTU AJI, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "YUSI RAKHMAH WATI.",
+                    'walas' => "DWI ANANTO KUSUMO, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+
+                    'walas' => "ASIH MULYANI, S.KOM.",
                     "created_at" => now()
                 ],
                 [
@@ -62,17 +58,12 @@ class TmWalasSeeder extends Seeder
                     "created_at" => now()
                 ],
                 [
-
-                    'walas' => "NIKEN, S.SI.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "DWI PRATIWI, S.PD.",
+                    'walas' => "DWI APRIANI, S.PD.",
                     "created_at" => now()
                 ],
                 [
 
-                    'walas' => "DWI APRIANI, S.Pd.",
+                    'walas' => "AI WARNI, S.PD.",
                     "created_at" => now()
                 ],
                 [
@@ -81,11 +72,20 @@ class TmWalasSeeder extends Seeder
                 ],
                 [
 
-                    'walas' => "RIZKY NURUL HIDAYAH, S.PD.",
+                    'walas' => "PURWONUGROHO, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "ARIE SUCIPTO, S.SS.",
+                    'walas' => "ASYFA QOLBI RAKHAPUTRY.",
+                    "created_at" => now()
+                ],
+                [
+
+                    'walas' => "N. SANTI SITI N., S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "INTAN BAEDARI, S.PD.",
                     "created_at" => now()
                 ],
                 [
@@ -94,7 +94,27 @@ class TmWalasSeeder extends Seeder
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "AI WARNI, S.Pd.",
+                    'walas' => "YUSI RAKHMAH WATI, S.SAS.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "RIZKY NURUL HIDAYAH, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "MUKTI ALI, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "DHIENA FARIDA, S.T.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "ADITYA DWI NUGROHO, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "IMANUDIN HIDAYAT, S.PD.",
                     "created_at" => now()
                 ],
                 [
@@ -102,59 +122,20 @@ class TmWalasSeeder extends Seeder
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "IMANUDDIN, S.Pd.",
-                    "created_at" => now()
-                ],
-
-                [
-                    'walas' => "Dra. NAOMI MINARDO SIHOMBING.",
-                    "created_at" => now()
-                ],
-
-
-                [
-                    'walas' => "RIZKY JULIAN PANGESTU AJI,S.PD.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "ASIH MULYANI, S.Kom.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "SITI UBAHIYAH, S.E.",
-                    "created_at" => now()
-                ],
-                [
                     'walas' => "GINA FARIANI, S.P.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "GIRI INDAH SARI, S.Pd.",
+                    'walas' => "GIYANTI, S.PD.",
                     "created_at" => now()
                 ],
 
                 [
-                    'walas' => "IWAN SUTIAWAN, S.Pd.",
+                    'walas' => "MUHAMMAD FALAHAEN JIDDAN, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "JUJU JURIAH, S.P.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "PURWONUGROHO, S.PD.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "DWI ANANTO KUSUMO.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "TIODORA SABARINA, S.Pd.",
-                    "created_at" => now()
-                ],
-                [
-                    'walas' => "IKA MUHARYANI, S.Pd.",
+                    'walas' => "DWI PRATIWI, S.PD.",
                     "created_at" => now()
                 ],
                 [
@@ -162,81 +143,105 @@ class TmWalasSeeder extends Seeder
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "INTAN BAEDARI, S.PD.",
+                    'walas' => "TITI RAHMAWATI, S.SI.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "FIKRI MAULANA RIDHO, S.PD.",
+                    'walas' => "JUJU JURIAH, S.SI.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "Dra. HJ. RINI KOMALASARI.",
+                    'walas' => "ARIE SUCIPTO, S.SS.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "WIRYA AINI, S.Pd.",
+                    'walas' => "IWAN SUTIAWAN, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "YANUAR HARDI H., S.Pd.",
+                    'walas' => "DIANA MUSTIKA SARI, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "Dra. AI NURFARIDAH.",
+                    'walas' => "GIRI INDAH SARI, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "SRI HAYATI, S.Pd.",
+                    'walas' => "SUPRIYADI, S.KOM.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "Dra. AI NURFARIDAH",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "SRI HAYATI, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "TIODORA SABARINA, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "SRI MILDAWATI, M.PD.",
                      "created_at" => now()
                 ],
                 [
-                    'walas' => "TRI RAHAYU, S.Pd.", 
+                    'walas' => "WIRYA AINI, M.PD.", 
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "NUR'AINI, S.Pd.",
+                    'walas' => "FIA FIANTI, S.PD.",
                      "created_at" => now()
                 ],
                 [
-                    'walas' => "FERY YANTINI, S.Pd.", 
+                    'walas' => "MOCHAMAD ILHAM LAHIA, S.PAR.", 
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "FIA FIANTI, S.Pd.",
+                    'walas' => "Dra. HJ. RINI KOMALASARI",
                      "created_at" => now()
                 ],
                 [
-                    'walas' => "LIDDIA HENDRIATI, S.Pd.",
+                    'walas' => "SRI WILUJENG S.PD, M.PD",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "IKE YUNIAWATI, S.Pd.",
+                    'walas' => "SYARIFAH, S.PDI.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "SRI WILUJENG S.Pd, M.Pd.",
+                    'walas' => "IKE YUNIAWATI, S.PD.",
                     "created_at" => now()
                 ],
 
                 [
-                    'walas' => "IKA SEPTIANAWATI, S.Pd.",
+                    'walas' => "FREDDY ANGGIAT, S.PD.",
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "FREDDY ANGGIAT, S.Pd.", 
+                    'walas' => "YANUAR HARDI H., S.PD.", 
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "SRI MILDAWATI, M.Pd.", 
+                    'walas' => "IKA SEPTIANAWATI, S.PD.", 
                     "created_at" => now()
                 
                 ],
                 [
-                    'walas' => "JANUAR AMBARWATI, S.Pd.", 
+                    'walas' => "TRI RAHAYU, S.PD.", 
                     "created_at" => now()
                 ],
                 [
-                    'walas' => "SYARIFAH, S.PdI.",
+                    'walas' => "LIDDIA HENDRIATI, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "JANUAR AMBARWATI, S.PD.",
+                    "created_at" => now()
+                ],
+                [
+                    'walas' => "FERY YANTINI, S.PD.",
                     "created_at" => now()
                 ],
 
