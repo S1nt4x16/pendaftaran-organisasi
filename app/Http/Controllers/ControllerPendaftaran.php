@@ -87,6 +87,6 @@ class ControllerPendaftaran extends Controller
                 'created_at' => now()
             ]);
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success', 'Selamat Kamu Telah Mendaftar Kopasus IT Data Sudah Diterima');
     }
 }
