@@ -55,7 +55,7 @@ class ControllerPendaftaran extends Controller
             ->where([['nama_lengkap', $request->nama_lengkap], ['id_divisi', $request->divisi]])
             ->count();
         if (!empty($validasi)) {
-            return redirect()->back()->with('error', 'Menambahkan Data Sudah Ada');
+            return redirect()->back()->with('error', 'Gagal Menambahkan Data, Data Sudah Ada / Terdaftar');
         }
 
         $idPeriode = DB::table('tm_periodes')

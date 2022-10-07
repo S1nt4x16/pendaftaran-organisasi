@@ -6,30 +6,30 @@ Welcome To Home
 @section('content')
 <style>
 .jumlah {
-    width: 390px ;
+    width: 375px ;
     margin-top:20px;
-    background-color: green;
+    background-color: #E26868;
 }
 
 .periode {
-    height: 275px;
+    height: 290px;
 }
 
 .agama {
     margin-top: 20px;
     margin-left: 10px;
-    width: 390px;
+    width: 375px;
 }
 
 .ortu {
     margin-top: 20px;
     margin-left: 18px;
-    width: 390px;
+    width: 375px;
     background-color: #2B4865;
 }
 
 .pen {
-    background-color: #256D85;
+    opacity: 100%;
 }
 </style>
 <div class="card">
@@ -37,23 +37,22 @@ Welcome To Home
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="card pen">
+                    <div class="card bg-info pen">
                         <div class="card-header">
                             <h3>Pendaftar</h3>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mb-4">
                             <p>Jumlah Pendaftar Saat Ini</p>
                             <canvas id="myChart" width="200px" height="80px"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card bg-secondary periode">
-                        <div class="card-header">
+                    <div class="card periode">
+                        <div class="card-header mb-4">
                             <h3>Periode</h3>
                         </div>
-                        <div class="card-body">
-                            <br>
+                        <div class="card-body mb-4">
                             <p>Periode Aktif</p>
                             <p><b>- {{ $periode->periode }}</b></p>
                             <p>Jumlah Anggota Aktif</p>
@@ -66,7 +65,7 @@ Welcome To Home
                             <div class="card-header">
                                 <h3>Divisi</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body mb-4">
                                 <p>Jumlah Pendaftar Per Divisi</p>
                                 <canvas id="myChart1" width="200px" height="80px"></canvas>
                             </div>
@@ -79,9 +78,9 @@ Welcome To Home
                             <div class="card-header">
                                 <h3>Jumlah Siswa</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body mb-4">
                                 <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
-                                <canvas id="myChart2" width="200px" height="80px"></canvas>
+                                <canvas id="myChart2" width="200px" height="85px"></canvas>
                             </div>
                         </div>
                     </div>
@@ -90,7 +89,7 @@ Welcome To Home
                             <div class="card-header">
                                 <h3>Agama</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body mb-4">
                             <p>Jumlah Agama Tiap Pendaftar</p>
                             <canvas id="myChart3" width="200px" height="85px"></canvas>
                             </div>
@@ -101,7 +100,7 @@ Welcome To Home
                             <div class="card-header">
                                 <h3>Izin Orang Tua</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body mb-4">
                             <p>Perizinan Terkait Orang Tua</p>
                                 <canvas id="myChart4" width="200px" height="85px"></canvas>
                             </div>
