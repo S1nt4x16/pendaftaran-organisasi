@@ -13,6 +13,8 @@
 <style>
     .alert {
         font-size: 20px;
-        font-family: aerial;
+        font-family: courier new;
+        color:red;
+        background-color:black;
     }
 </style>

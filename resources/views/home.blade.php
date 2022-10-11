@@ -25,7 +25,7 @@ Welcome To Home
     margin-top: 20px;
     margin-left: 18px;
     width: 375px;
-    background-color: #2B4865;
+    background-color: #68f3f8;;
 }
 
 .pen {
