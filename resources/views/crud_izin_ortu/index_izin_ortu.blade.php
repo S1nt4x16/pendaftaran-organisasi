@@ -36,7 +36,6 @@ Table Master Izin Orang Tua
                 </td> 
             </tr>
             @endforeach
-            
         </tbody>
     </table>
 </div>

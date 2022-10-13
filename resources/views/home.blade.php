@@ -9,7 +9,7 @@ Dashboard
 @section('content')
 <style>
 .jumlah {
-    width: 375px ;
+    width: 398px ;
     margin-top:20px;
     background-color: #E26868;
 }
@@ -21,13 +21,13 @@ Dashboard
 .agama {
     margin-top: 20px;
     margin-left: 10px;
-    width: 375px;
+    width: 398px;
 }
 
 .ortu {
     margin-top: 20px;
     margin-left: 18px;
-    width: 375px;
+    width: 398px;
     background-color: #68f3f8;;
 }
 

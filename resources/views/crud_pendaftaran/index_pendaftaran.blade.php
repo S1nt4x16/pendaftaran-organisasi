@@ -14,6 +14,7 @@ Pendaftaran
     <div class="card-body">
     <table id="table-pendaftaran">
         <thead>
+               <tr>
                    <th>No</th>
                    <th>Periode</th>
                    <th>No Pendaftaran</th>
@@ -43,8 +44,9 @@ Pendaftaran
             @endforeach
         </tbody>
     </table>
+  </div>
 </div>
-</div>
+
 <div class="modal fade" id="hapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -85,6 +87,7 @@ Pendaftaran
                 <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary" data-coreui-dismiss="modal">Yes</button>
             </div>
+        </form>
       </div>
     </div>
   </div>
@@ -129,5 +132,3 @@ download.addEventListener('show.coreui.modal', event => {
 })
 </script>
 @endsection
-
-

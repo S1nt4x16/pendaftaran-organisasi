@@ -38,12 +38,9 @@ Table Master Walas
                 </td> 
             </tr>
             @endforeach
-            
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="modal fade" id="hapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
