@@ -128,7 +128,7 @@
                 </div>
                 <div class="mb-2">
                     <label  style="font-family:courier new;color:#68f3f8;" for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                    <select class="form-select" name="jenis_kelamin" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="jenis_kelamin" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         <option value="1">Laki-Laki</option>
                         <option value="2">Perempuan</option>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="mb-2">
                     <label style="font-family:courier new;color:#68f3f8;" for="agama" class="form-label">Agama</label>
-                    <select class="form-select" name="agama" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="agama" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         @foreach($agama as $a)
                         <option value="{{ $a->id }}">{{ $a->agama }}</option>
@@ -145,7 +145,7 @@
                 </div>
                 <div class="mb-2">
                     <label style="font-family:courier new;color:#68f3f8;" for="kelas" class="form-label">Kelas</label>
-                    <select class="form-select" name="kelas" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="kelas" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         @foreach($kelas as $k)
                         <option value="{{ $k->id }}">{{ $k->kelas }}</option>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="mb-2">
                     <label style="font-family:courier new;color:#68f3f8;" for="divisi" class="form-label">Divisi</label>
-                    <select class="form-select" name="divisi" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="divisi" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         @foreach($divisi as $d)
                         <option value="{{ $d->id }}">{{ $d->divisi }} ({{ $d->divisi_lengkap }})</option>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="mb-2">
                     <label style="font-family:courier new;color:#68f3f8;" for="izin_ortu" class="form-label">Izin Ortu</label>
-                    <select class="form-select" name="izin_ortu" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="izin_ortu" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         @foreach($izinOrtu as $i)
                         <option value="{{ $i->id }}">{{ $i->izin_ortu }}</option>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="mb-2">
                     <label style="font-family:courier new;color:#68f3f8;" for="walas" class="form-label">Walas</label>
-                    <select class="form-select" name="walas" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example">
+                    <select class="form-select" name="walas" style="background-color:black;font-family:courier new;color:#68f3f8;" aria-label="Default select example" required>
                         <option value="" selected>--Pilih--</option>
                         @foreach($walas as $w)
                         <option value="{{ $w->id }}">{{ $w->walas }}</option>

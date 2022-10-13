@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('title')
-    Welcome To Master Data Izin Ortu
+Welcome To Master Data Izin Ortu
+@endsection
+@section('breadcrumb')
+Table Master Izin Orang Tua
 @endsection
 
 @section('content')

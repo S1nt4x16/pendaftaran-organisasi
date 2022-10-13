@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('title')
-    Welcome To Master Data Divisi
+Welcome To Master Data Divisi
+@endsection
+@section('breadcrumb')
+Table Master Divisi
 @endsection
 
 @section('content')

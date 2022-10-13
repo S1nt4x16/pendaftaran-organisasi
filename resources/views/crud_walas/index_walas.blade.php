@@ -2,6 +2,9 @@
 @section('title')
 Welcome To Master Data Wali Kelas
 @endsection
+@section('breadcrumb')
+Table Master Walas
+@endsection
 
 @section('content')
 <div class="card">

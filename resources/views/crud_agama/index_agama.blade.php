@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('title')
-    Welcome To Master Data Agama
+Welcome To Master Data Agama
+@endsection
+@section('breadcrumb')
+Table Master Agama
 @endsection
 
 @section('content')

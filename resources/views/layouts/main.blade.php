@@ -16,12 +16,8 @@
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex">
-            <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-                <use xlink:href="assets/brand/coreui.svg#full"></use>
-            </svg>
-            <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-                <use xlink:href="assets/brand/coreui.svg#signet"></use>
-            </svg>
+            <img class="sidebar-brand-full" src="{{ asset('images/fav.png') }}" width="100px" height="100px" style="margin:10px;" alt="">
+            <img class="sidebar-brand-narrow" width="46" height="46" src="{{ asset('images/fav.png') }}" alt="">
         </div>
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
             @include('layouts.menu')
@@ -41,9 +37,8 @@
                         <use xlink:href="assets/brand/coreui.svg#full"></use>
                     </svg></a>
                 <ul class="header-nav d-none d-md-flex">
-                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('home') }}">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
                 </ul>
                 <ul class="header-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">
@@ -62,30 +57,12 @@
                 <ul class="header-nav ms-3">
                     <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#"
                             role="button" aria-haspopup="true" aria-expanded="false">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg"
+                            <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('images/fav.png') }}"
                                     alt="user@email.com"></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">Account</div>
-                            </div><a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                                </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a
-                                class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-                                </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a
-                                class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-task"></use>
-                                </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a
-                                class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use>
-                                </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
-                            <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">Settings</div>
+                                <div class="fw-semibold">Kopasus IT Admin</div>
                             </div><a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
@@ -93,21 +70,6 @@
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
                                 </svg> Settings</a><a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-credit-card"></use>
-                                </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a
-                                class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-file"></use>
-                                </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                                </svg> Lock Account</a><a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                                </svg> Logout</a>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -118,7 +80,7 @@
                         <li class="breadcrumb-item">
                             <!-- if breadcrumb is single--><span>Home</span>
                         </li>
-                        <li class="breadcrumb-item active"><span>Dashboard</span></li>
+                        <li class="breadcrumb-item active"><span>@yield('breadcrumb')</span></li>
                     </ol>
                 </nav>
             </div>

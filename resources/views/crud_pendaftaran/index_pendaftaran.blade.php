@@ -2,6 +2,9 @@
 @section('title')
 Welcome To Master Data Pendaftaran
 @endsection
+@section('breadcrumb')
+Pendaftaran
+@endsection
 
 @section('content')
 <div class="card">

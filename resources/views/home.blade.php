@@ -2,6 +2,9 @@
 @section('title')
 Welcome To Home
 @endsection
+@section('breadcrumb')
+Dashboard
+@endsection
 
 @section('content')
 <style>
@@ -37,7 +40,7 @@ Welcome To Home
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="card bg-info pen">
+                    <div class="card bg-light pen">
                         <div class="card-header">
                             <h3>Pendaftar</h3>
                         </div>
@@ -48,7 +51,7 @@ Welcome To Home
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card periode">
+                    <div class="card bg-light periode">
                         <div class="card-header mb-4">
                             <h3>Periode</h3>
                         </div>
@@ -61,7 +64,7 @@ Welcome To Home
                     </div>
                 </div>
                     <div class="col-lg-4">
-                        <div class="card bg-warning">
+                        <div class="card bg-light">
                             <div class="card-header">
                                 <h3>Divisi</h3>
                             </div>
@@ -74,7 +77,7 @@ Welcome To Home
 
                 <div class="row">
                 <div class="col-lg-4">
-                        <div class="card jumlah">
+                        <div class="card bg-light jumlah">
                             <div class="card-header">
                                 <h3>Jumlah Siswa</h3>
                             </div>
@@ -96,7 +99,7 @@ Welcome To Home
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card ortu">
+                        <div class="card bg-light ortu">
                             <div class="card-header">
                                 <h3>Izin Orang Tua</h3>
                             </div>
@@ -115,6 +118,7 @@ Welcome To Home
 <script src="{{ asset('chart.js/dist/chart.min.js') }}"></script>
 
 <script type="text/javascript">
+
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
@@ -133,7 +137,8 @@ Welcome To Home
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 1
+                fill:true,
+                tension: 0.6,
             }]
         },
         options: {
@@ -167,7 +172,8 @@ Welcome To Home
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 1
+                fill:true,
+                tension: 0.6,
             }]
         },
         options: {
@@ -197,7 +203,12 @@ Welcome To Home
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 1
+                fill:true,
+                tension: 0.6,
+                // segment: {
+                //     borderColor: ctx => up(ctx, 'rgba(75, 192, 192, 1)') || down(ctx, 'rgba(255, 26, 104, 1)'),
+                //     backgroundColor: ctx => up(ctx, 'rgba(75, 192, 192, 1)') || down(ctx, 'rgba(255, 26, 104, 1)'),
+                // }
             }]
         },
         options: {
@@ -231,7 +242,12 @@ Welcome To Home
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 1
+                fill:true,
+                tension: 0.6,
+                // segment: {
+                //     borderColor: ctx => up(ctx, 'rgba(75, 192, 192, 1)') || down(ctx, 'rgba(255, 26, 104, 1)'),
+                //     backgroundColor: ctx => up(ctx, 'rgba(75, 192, 192, 1)') || down(ctx, 'rgba(255, 26, 104, 1)'),
+                // }
             }]
         },
         options: {
@@ -265,7 +281,8 @@ Welcome To Home
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
-                borderWidth: 1
+                fill:true,
+                tension: 0.6,
             }]
         },
         options: {

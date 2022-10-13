@@ -2,6 +2,9 @@
 @section('title')
 Welcome To Master Data Periode
 @endsection
+@section('breadcrumb')
+Table Master Periode
+@endsection
 
 @section('content')
 <div class="card">
