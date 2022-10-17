@@ -24,52 +24,73 @@
         </ul>
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
+
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
         <header class="header header-sticky mb-4">
             <div class="container-fluid">
-                <button class="header-toggler px-md-0 me-md-3" type="button"
-                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
                     <svg class="icon icon-lg">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
                     </svg>
-                </button><a class="header-brand d-md-none" href="#">
+                </button>
+
+                <a class="header-brand d-md-none" href="#">
                     <svg width="118" height="46" alt="CoreUI Logo">
                         <use xlink:href="assets/brand/coreui.svg#full"></use>
-                    </svg></a>
+                    </svg>
+                </a>
+
                 <ul class="header-nav d-none d-md-flex">
                     <li class="nav-item"><a class="nav-link" href="{{ url('home') }}">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
                 </ul>
+
                 <ul class="header-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <svg class="icon icon-lg">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                            </svg></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <svg class="icon icon-lg">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
-                            </svg></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <svg class="icon icon-lg">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-                            </svg></a></li>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
+
                 <ul class="header-nav ms-3">
-                    <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#"
-                            role="button" aria-haspopup="true" aria-expanded="false">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('images/fav.png') }}"
-                                    alt="user@email.com"></div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <div class="avatar avatar-md">
+                                <img class="avatar-img" src="{{ asset('images/fav.png') }}" alt="user@email.com">
+                            </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <div class="dropdown-header bg-light py-2">
                                 <div class="fw-semibold">Kopasus IT Admin</div>
-                            </div><a class="dropdown-item" href="#">
+                            </div>
+                            <a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-                                </svg> Profile</a><a class="dropdown-item" href="#">
+                                </svg> Profile
+                            </a>
+                                <a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
-                                </svg> Settings</a><a class="dropdown-item" href="#">
+                                </svg> Settings
+                            </a>
+                        </div>            
                     </li>
                 </ul>
             </div>
@@ -85,6 +106,7 @@
                 </nav>
             </div>
         </header>
+        
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
                 @yield('content')

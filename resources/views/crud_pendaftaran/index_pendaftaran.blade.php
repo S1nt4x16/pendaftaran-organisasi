@@ -14,7 +14,7 @@ Pendaftaran
     <div class="card-body">
     <table id="table-pendaftaran">
         <thead>
-               <tr>
+              <tr>
                    <th>No</th>
                    <th>Periode</th>
                    <th>No Pendaftaran</th>
@@ -22,7 +22,7 @@ Pendaftaran
                    <th>Divisi</th>
                    <th>Update</th>
                    <th>Action</th>
-               </tr>
+              </tr>
         </thead>
         <tbody>
             @php
@@ -52,14 +52,13 @@ Pendaftaran
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="" method="post" id="form-hapus">
             @csrf
             @method('delete')
             <div class="modal-body">
                 <p id="tanya"></p>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
@@ -75,13 +74,12 @@ Pendaftaran
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="" method="get" id="form-download">
             @csrf
             <div class="modal-body">
                 <p id="tanya-download"></p>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
