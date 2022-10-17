@@ -56,7 +56,7 @@ Table Master Izin Orang Tua
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Yes</button>
+                <button type="submit" class="btn btn-danger">Yes</button>
             </div>
         </form>
       </div>
