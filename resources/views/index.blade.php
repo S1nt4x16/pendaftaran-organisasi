@@ -87,7 +87,7 @@
                     </center>
                     
                     <h1>
-                    <div class="scroller" style="font-family:garamond;color:white;margin-left:210px;">
+                    <div class="scroller" style="font-family:garamond;color:white;margin-left:200px;">
                                 <span>
                                     <center>
                                     <b>KOPASUS IT</b><br>

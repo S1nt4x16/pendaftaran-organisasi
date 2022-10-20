@@ -8,40 +8,23 @@ Dashboard
 
 @section('content')
 <style>
-.jumlah {
-    width: 398px ;
-    margin-top:20px;
-    background-color: #E26868;
-}
-
 .periode {
-    height: 290px;
-}
-
-.agama {
-    margin-top: 20px;
-    margin-left: 10px;
-    width: 398px;
-}
-
-.ortu {
-    margin-top: 20px;
-    margin-left: 18px;
-    width: 398px;
-    background-color: #68f3f8;;
+    height: 315px;
 }
 
 .pen {
     opacity: 100%;
 }
 </style>
+
 <div class="card">
     <div class="card-body">
         <div class="container-fluid">
+
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="card bg-light pen">
-                        <div class="card-header">
+                    <div class="card bg-light pen mb-4">
+                        <div class="card-header mb-4">
                             <h3>Pendaftar</h3>
                         </div>
                         <div class="card-body mb-4">
@@ -50,7 +33,7 @@ Dashboard
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-4">
                     <div class="card bg-light periode">
                         <div class="card-header mb-4">
                             <h3>Periode</h3>
@@ -63,9 +46,9 @@ Dashboard
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-4">
+                <div class="col-lg-4 mb-4">
                         <div class="card bg-light">
-                            <div class="card-header">
+                            <div class="card-header mb-4">
                                 <h3>Divisi</h3>
                             </div>
                             <div class="card-body mb-4">
@@ -73,44 +56,45 @@ Dashboard
                                 <canvas id="myChart1" width="200px" height="80px"></canvas>
                             </div>
                         </div>
-                    </div>
+                </div>
+            </div>
 
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-4">
-                        <div class="card bg-light jumlah">
-                            <div class="card-header">
-                                <h3>Jumlah Siswa</h3>
-                            </div>
-                            <div class="card-body mb-4">
-                                <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
-                                <canvas id="myChart2" width="200px" height="85px"></canvas>
-                            </div>
+                    <div class="card bg-light jumlah">
+                        <div class="card-header mb-4">
+                            <h3>Jumlah Siswa</h3>
+                        </div>
+                        <div class="card-body mb-4">
+                            <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
+                            <canvas id="myChart2" width="200px" height="80px"></canvas>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card bg-light agama">
-                            <div class="card-header">
-                                <h3>Agama</h3>
-                            </div>
-                            <div class="card-body mb-4">
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-light agama">
+                        <div class="card-header mb-4">
+                            <h3>Agama</h3>
+                        </div>
+                        <div class="card-body mb-4">
                             <p>Jumlah Agama Tiap Pendaftar</p>
-                            <canvas id="myChart3" width="200px" height="85px"></canvas>
-                            </div>
+                            <canvas id="myChart3" width="200px" height="80px"></canvas>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card bg-light ortu">
-                            <div class="card-header">
-                                <h3>Izin Orang Tua</h3>
-                            </div>
-                            <div class="card-body mb-4">
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-light ortu">
+                        <div class="card-header mb-4">
+                            <h3>Izin Orang Tua</h3>
+                        </div>
+                        <div class="card-body mb-4">
                             <p>Perizinan Terkait Orang Tua</p>
-                                <canvas id="myChart4" width="200px" height="85px"></canvas>
-                            </div>
+                            <canvas id="myChart4" width="200px" height="80px"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
