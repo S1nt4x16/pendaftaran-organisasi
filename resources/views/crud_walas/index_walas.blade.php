@@ -16,7 +16,7 @@ Table Master Walas
         <thead>
                <tr>
                    <th>No</th>
-                   <th>Walas</th>
+                   <th>Wali Kelas</th>
                    <th>Created Date</th>
                    <th>Action</th>
                </tr>
@@ -58,7 +58,7 @@ Table Master Walas
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Yes</button>
+                <button type="submit" class="btn btn-danger">Yes</button>
             </div>
         </form>
       </div>
