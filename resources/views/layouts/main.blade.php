@@ -29,9 +29,7 @@
         <header class="header header-sticky mb-4">
             <div class="container-fluid">
                 <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-                    <svg class="icon icon-lg">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-                    </svg>
+                    <i class="nav-icon icon-lg cil-menu"></i>
                 </button>
 
                 <a class="header-brand d-md-none" href="#">
@@ -50,20 +48,6 @@
                         <a class="nav-link" href="#">
                             <svg class="icon icon-lg">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <svg class="icon icon-lg">
-                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <svg class="icon icon-lg">
-                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
                             </svg>
                         </a>
                     </li>

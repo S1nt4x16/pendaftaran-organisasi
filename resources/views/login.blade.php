@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/layout.css">
     <style>
          #background-video {
-            width: 100vw;
-            height: 100vh;
+            width: 120vw;
+            height: 120vh;
             object-fit: cover;
             position: fixed;
             left: 0;
@@ -55,7 +55,7 @@
     </video>
 
     <div class="container">
-        <div class="form-bg">
+        <div class="col-xl-12 d-flex justify-content-center align-items-center form-bg">
             <form action="{{ url('login') }}" method="post">
                 @csrf
                 <h2 style="color:#68f3f8;opacity:80%;font-weight:1;font-size:15px;font-family:courier new;font-size:20px;">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a type="button" style="color:	#808080;font-weight:1;font-size:18px;font-family:courier new" href=".">Back</a></h2>

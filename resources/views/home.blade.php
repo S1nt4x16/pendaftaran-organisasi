@@ -7,89 +7,73 @@ Dashboard
 @endsection
 
 @section('content')
-<style>
-.periode {
-    height: 315px;
-}
-
-.pen {
-    opacity: 100%;
-}
-</style>
 
 <div class="card">
     <div class="card-body">
         <div class="container-fluid">
-
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="card bg-light pen mb-4">
-                        <div class="card-header mb-4">
-                            <h3>Pendaftar</h3>
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        Periode Aktif Saat ini {{ $periode -> periode }}. Dan Jumlah Pendaftar Saat Ini Adalah {{ $jml_pendaftaran }}.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xxl-6 col-lg-6 mb-4">
+                    <div class="card card-hei bg-light mb-4">
+                        <div class="card-header ">
+                            <center><b><h3>Pendaftar</h3></b></center>
                         </div>
                         <div class="card-body mb-4">
                             <p>Jumlah Pendaftar Saat Ini</p>
-                            <canvas id="myChart" width="200px" height="80px"></canvas>
+                            <canvas id="myChart" class="chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card bg-light periode">
-                        <div class="card-header mb-4">
-                            <h3>Periode</h3>
-                        </div>
-                        <div class="card-body mb-4">
-                            <p>Periode Aktif</p>
-                            <p><b>- {{ $periode->periode }}</b></p>
-                            <p>Jumlah Anggota Aktif</p>
-                            <p><b>- {{ $jml_pendaftaran }}</b></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                        <div class="card bg-light">
-                            <div class="card-header mb-4">
-                                <h3>Divisi</h3>
-                            </div>
-                            <div class="card-body mb-4">
-                                <p>Jumlah Pendaftar Per Divisi</p>
-                                <canvas id="myChart1" width="200px" height="80px"></canvas>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card bg-light jumlah">
-                        <div class="card-header mb-4">
-                            <h3>Jumlah Siswa</h3>
+                <div class="col-xxl-6 col-lg-6 mb-4">
+                    <div class="card card-hei bg-light mb-4">
+                        <div class="card-header">
+                            <center><b><h3>Jumlah Siswa</h3></b></center>
                         </div>
                         <div class="card-body mb-4">
                             <p>Jumlah Siswa Laki-laki Dan Perempuan</p>
-                            <canvas id="myChart2" width="200px" height="80px"></canvas>
+                            <canvas id="myChart2" class="chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card bg-light agama">
-                        <div class="card-header mb-4">
-                            <h3>Agama</h3>
+            </div>
+            <div class="row">
+                <div class="col-xxl-4 col-lg-6 mb-4">
+                    <div class="card card-hei bg-light mb-4">
+                        <div class="card-header">
+                            <center><b><h3>Agama</h3></b></center>
                         </div>
                         <div class="card-body mb-4">
                             <p>Jumlah Agama Tiap Pendaftar</p>
-                            <canvas id="myChart3" width="200px" height="80px"></canvas>
+                            <canvas id="myChart3" class="chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card bg-light ortu">
-                        <div class="card-header mb-4">
-                            <h3>Izin Orang Tua</h3>
+                <div class="col-xxl-4 col-lg-6 mb-4">
+                    <div class="card card-hei bg-light mb-4">
+                        <div class="card-header">
+                            <center><b><h3>Izin Orang Tua</h3></b></center>
                         </div>
                         <div class="card-body mb-4">
                             <p>Perizinan Terkait Orang Tua</p>
-                            <canvas id="myChart4" width="200px" height="80px"></canvas>
+                            <canvas id="myChart4" class="chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-lg-12 mb-4">
+                        <div class="card card-hei bg-light mb-4">
+                            <div class="card-header">
+                                <center><b><h3>Divisi</h3></b></center>
+                            </div>
+                            <div class="card-body mb-4">
+                                <p>Jumlah Pendaftar Per Divisi</p>
+                                <canvas id="myChart1" class="chart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +93,7 @@ Dashboard
         data: {
             labels: [{{ $periodSub2 }}, {{ $periodSub1 }}, {{ $period }}],
             datasets: [{
-                label: 'Pendaftar Calon Anggota Kopasus IT',
+                label: 'Calon Anggota Kopasus IT',
                 data: [{{ $jml_pendaftaran2 }}, {{ $jml_pendaftaran1 }}, {{ $jml_pendaftaran }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -144,7 +128,7 @@ Dashboard
                 @endforeach
             ],
             datasets: [{
-                label: 'Divisi Calon Anggota Kopasus IT',
+                label: 'Calon Anggota Kopasus IT',
                 data: [{{ $divisi_jml_rpl }}, {{ $divisi_jml_tkj }}, {{ $divisi_jml_mm }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -175,7 +159,7 @@ Dashboard
         data: {
             labels: ['Laki-Laki', 'Perempuan'],
             datasets: [{
-                label: 'Jenis Kelamin Calon Anggota Kopasus IT',
+                label: 'Calon Anggota Kopasus IT',
                 data: [{{ $laki }}, {{ $perempuan }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -214,7 +198,7 @@ Dashboard
                 @endforeach
             ],
             datasets: [{
-                label: 'Agama Calon Anggota Kopasus IT',
+                label: 'Calon Anggota Kopasus IT',
                 data: [{{ $islam }}, {{ $katholik }}, {{ $protestan }}, {{ $hindu }}, {{ $buddha }}, {{ $konghucu }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -253,7 +237,7 @@ Dashboard
                 @endforeach
             ],
             datasets: [{
-                label: 'Perizinan Calon Anggota Kopasus IT',
+                label: 'Calon Anggota Kopasus IT',
                 data: [{{ $ya }}, {{ $tidak }},],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
