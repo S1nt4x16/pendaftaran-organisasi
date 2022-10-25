@@ -43,7 +43,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
                 </ul>
 
-                <ul class="header-nav ms-auto">
+                <ul class="header-nav ms-auto"> 
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <svg class="icon icon-lg">

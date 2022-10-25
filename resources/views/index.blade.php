@@ -95,17 +95,18 @@
                     </h1>
                     <hr style="color:#68f3f8;opacity:70%;">
 
-                <center>
-                    <div class="col-4" style="margin-top:30px;">
-                        <a href="http://127.0.0.1:8000/login" style="color:#68f3f8;"><i class="fas fa-plus"></i>Login</a>
-                    </div>
-                </center>
+                    <center>
+                        <div class="col-4" style="margin-top:30px;">
+                            <a href="http://127.0.0.1:8000/login" style="color:#68f3f8;"><i class="fas fa-plus"></i>Login</a>
+                        </div>
+                    </center>
 
-                <br>
+                    <br>
 
-                @include('layouts.message')
+                    @include('layouts.message')
 
                 </div>
+                
                     <div class="card-body">
                         <form action="{{ url('store') }}" method="post" style="color:black;">
                             @csrf

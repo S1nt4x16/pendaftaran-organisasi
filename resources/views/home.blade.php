@@ -66,19 +66,18 @@ Dashboard
                     </div>
                 </div>
                 <div class="col-xxl-4 col-lg-12 mb-4">
-                        <div class="card card-hei bg-light mb-4">
-                            <div class="card-header">
-                                <center><b><h3>Divisi</h3></b></center>
-                            </div>
-                            <div class="card-body mb-4">
-                                <p>Jumlah Pendaftar Per Divisi</p>
-                                <canvas id="myChart1" class="chart"></canvas>
-                            </div>
+                    <div class="card card-hei bg-light mb-4">
+                        <div class="card-header">
+                            <center><b><h3>Divisi</h3></b></center>
+                        </div>
+                        <div class="card-body mb-4">
+                            <p>Jumlah Pendaftar Per Divisi</p>
+                            <canvas id="myChart1" class="chart"></canvas>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </div>
