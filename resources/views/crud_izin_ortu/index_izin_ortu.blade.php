@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('header')
+@include('layouts.res')
+@endsection
 @section('title')
 Welcome To Master Data Izin Ortu
 @endsection
@@ -12,7 +15,7 @@ Table Master Izin Orang Tua
        <a href="{{ url('/izin_ortu/create') }}" class="btn btn-primary">Create</a>
     </div>
     <div class="card-body">
-    <table id="table-izin-ortu">
+    <table id="table-izin-ortu" class="display responsive nowrap" style="width:100%;">
         <thead>
                <tr>
                    <th>No</th>
@@ -65,9 +68,11 @@ Table Master Izin Orang Tua
 @endsection
 
 @section('footer')
+@include('layouts.res-js')
 <script>
 $(document).ready( function () {
     $('#table-izin-ortu').DataTable();
+        responsive: true
 } );
 </script>
 

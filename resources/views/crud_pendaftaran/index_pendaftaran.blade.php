@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('header')
+@include('layouts.res')
+@endsection
 @section('title')
 Welcome To Master Data Pendaftaran
 @endsection
@@ -7,45 +10,49 @@ Pendaftaran
 @endsection
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-      <button type="button" class="btn btn-success" data-coreui-toggle="modal" data-coreui-target="#download" data-coreui-name="Calon Anggota Kopasus IT" data-coreui-url="{{ route('excelexport') }}">Download Data</button>
+<div class="row">
+  <div class="col-xxl-12 col-lg-12">
+      <div class="card">
+          <div class="card-header">
+            <button type="button" class="btn btn-success" data-coreui-toggle="modal" data-coreui-target="#download" data-coreui-name="Calon Anggota Kopasus IT" data-coreui-url="{{ route('excelexport') }}">Download Data</button>
+          </div>
+          <div class="card-body">
+          <table id="table-pendaftaran" class="display responsive nowrap" style="width:100%;">
+              <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Periode</th>
+                        <th>No Pendaftaran</th>
+                        <th>Nama</th>
+                        <th>Divisi</th>
+                        <th>Update</th>
+                        <th>Action</th>
+                    </tr>
+              </thead>
+              <tbody>
+                  @php
+                  $no = 1;
+                  @endphp
+                  @foreach ($pendaftaran as $pf)
+                  <tr>
+                      <td>{{ $no++ }}</td>
+                      <td>{{ $pf->periode }}</td>
+                      <td>{{ $pf->id_no }}</td>
+                      <td>{{ $pf->nama_lengkap}}</td>
+                      <td>{{ $pf->divisi }}</td>
+                      <td>{{ $pf->updated_at ?? $pf->created_at }}</td>
+                      <td>
+                          <a href="{{ url('/pendaftaran/edit/'.$pf->id) }}" class="btn btn-success">Edit</a> 
+                          <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $pf->nama_lengkap }}" data-coreui-url="{{ url('pendaftaran/delete/'.$pf->id) }}">Delete</button>
+                      </td> 
+                  </tr>
+                  @endforeach
+              </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-    <table id="table-pendaftaran">
-        <thead>
-              <tr>
-                   <th>No</th>
-                   <th>Periode</th>
-                   <th>No Pendaftaran</th>
-                   <th>Nama</th>
-                   <th>Divisi</th>
-                   <th>Update</th>
-                   <th>Action</th>
-              </tr>
-        </thead>
-        <tbody>
-            @php
-            $no = 1;
-            @endphp
-            @foreach ($pendaftaran as $pf)
-            <tr>
-                <td>{{ $no++ }}</td>
-                <td>{{ $pf->periode }}</td>
-                <td>{{ $pf->id_no }}</td>
-                <td>{{ $pf->nama_lengkap}}</td>
-                <td>{{ $pf->divisi }}</td>
-                <td>{{ $pf->updated_at ?? $pf->created_at }}</td>
-                <td>
-                    <a href="{{ url('/pendaftaran/edit/'.$pf->id) }}" class="btn btn-success">Edit</a> 
-                    <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $pf->nama_lengkap }}" data-coreui-url="{{ url('pendaftaran/delete/'.$pf->id) }}">Delete</button>
-                </td> 
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
   </div>
-</div>
 
 <div class="modal fade" id="hapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -91,9 +98,11 @@ Pendaftaran
   </div>
 @endsection
 @section('footer')
+@include('layouts.res-js')
 <script>
 $(document).ready( function () {
     $('#table-pendaftaran').DataTable();
+      responsive: true
 } );
 </script>
 

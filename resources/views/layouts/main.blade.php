@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('coreui/vendors/@coreui/icons/css/free.min.css') }}">
     <link rel="stylesheet" href="{{ asset('datatable/datatables.min.css') }}">
     <title>@yield('title')</title>
+    @yield('header')
 </head>
 
 <body>

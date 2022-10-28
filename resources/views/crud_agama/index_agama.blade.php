@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('header')
+@include('layouts.res')
+@endsection
 @section('title')
 Welcome To Master Data Agama
 @endsection
@@ -12,7 +15,7 @@ Table Master Agama
        <a href="{{ url('/agama/create') }}" class="btn btn-primary">Create</a>
     </div>
     <div class="card-body">
-        <table id="table-agama">
+        <table id="table-agama" class="display responsive nowrap" style="width:100%;">
             <thead>
                 <tr>
                     <th>No</th>
@@ -67,9 +70,11 @@ Table Master Agama
 @endsection
 
 @section('footer')
+@include('layouts.res-js')
 <script>
 $(document).ready( function () {
     $('#table-agama').DataTable();
+        responsive: true
 } );
 </script>
 

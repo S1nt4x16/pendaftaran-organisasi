@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('header')
+@include('layouts.res')
+@endsection
 @section('title')
 Welcome To Master Data Wali Kelas
 @endsection
@@ -12,7 +15,7 @@ Table Master Walas
         <a href="{{ url('/walas/create') }}" class="btn btn-primary">Create</a>
     </div>
     <div class="card-body">
-    <table id="table-walas">
+    <table id="table-walas" class="display responsive nowrap" style="width:100%;">
         <thead>
                <tr>
                    <th>No</th>
@@ -67,9 +70,11 @@ Table Master Walas
 @endsection
 
 @section('footer')
+@include('layouts.res-js')
 <script>
 $(document).ready( function () {
     $('#table-walas').DataTable();
+        responsive: true
 } );
 </script>
 

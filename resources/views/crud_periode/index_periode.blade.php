@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('header')
+@include('layouts.res')
+@endsection
 @section('title')
 Welcome To Master Data Periode
 @endsection
@@ -12,7 +15,7 @@ Table Master Periode
         <a href="{{ url('/periode/create') }}" class="btn btn-primary">Create</a>
     </div>
     <div class="card-body">
-    <table id="table-periode">
+    <table id="table-periode" class="display responsive nowrap" style="width:100%;">
         <thead>
                <tr>
                    <th>No</th>
@@ -70,9 +73,11 @@ Table Master Periode
 @endsection
 
 @section('footer')
+@include('layouts.res-js')
 <script>
 $(document).ready( function () {
     $('#table-periode').DataTable();
+        responsive: true
 } );
 </script>
 
