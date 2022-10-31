@@ -62,7 +62,6 @@ class TmWalasSeeder extends Seeder
                     "created_at" => now()
                 ],
                 [
-
                     'walas' => "AI WARNI, S.PD.",
                     "created_at" => now()
                 ],
