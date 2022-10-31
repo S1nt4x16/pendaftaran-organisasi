@@ -227,7 +227,6 @@ class TmKelasSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                
                 'kelas' => "XII.IPS-3",
                 "created_at" => now()
             ],
