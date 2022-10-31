@@ -150,7 +150,6 @@ class TmKelasSeeder extends Seeder
                 "created_at" => now()
             ],
             [
-                
                 'kelas' => "XI.P.A-1",
                 "created_at" => now()
             ],
