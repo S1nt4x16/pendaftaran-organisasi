@@ -14,7 +14,8 @@ Dashboard
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-success" role="alert">
-                        Periode Aktif Saat ini {{ $periode -> periode }}. Dan Jumlah Pendaftar Saat Ini Adalah {{ $jml_pendaftaran }}.
+                        Periode Aktif Saat ini {{ $periode -> periode }}. 
+                        Dan Jumlah Pendaftar Saat Ini Adalah {{ $jml_pendaftaran }}.
                     </div>
                 </div>
             </div>
@@ -198,7 +199,8 @@ Dashboard
             ],
             datasets: [{
                 label: 'Calon Anggota Kopasus IT',
-                data: [{{ $islam }}, {{ $katholik }}, {{ $protestan }}, {{ $hindu }}, {{ $buddha }}, {{ $konghucu }}],
+                data: [{{ $islam }}, {{ $katholik }}, {{ $protestan }}, 
+                    {{ $hindu }}, {{ $buddha }}, {{ $konghucu }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

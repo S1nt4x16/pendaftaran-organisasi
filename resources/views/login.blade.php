@@ -49,7 +49,6 @@
 </head>
 
 <body>
-
     <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
         <source src="videos/bg1.mp4" type="video/mp4">
     </video>
@@ -58,10 +57,18 @@
         <div class="col-xl-12 d-flex justify-content-center align-items-center form-bg">
             <form action="{{ url('login') }}" method="post">
                 @csrf
-                <h2 style="color:#68f3f8;opacity:80%;font-weight:1;font-size:15px;font-family:courier new;font-size:20px;">Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a type="button" style="color:	#808080;font-weight:1;font-size:18px;font-family:courier new" href=".">Back</a></h2>
-                <p><input style="background-color:black;color:#68f3f8;" type="text" name="email" placeholder="123@gmail.com"></p>
-                <p><input style="background-color:black;color:#68f3f8;" type="password" name="password" placeholder="123"></p>
-                <button class="butt" style="color:#90ee90;opacity:90%;" type="submit">Login</button>
+                <h2 style="color:#68f3f8;opacity:80%;font-weight:1;font-size:15px;font-family:courier new;font-size:20px;">
+                Login 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <a type="button" 
+                    style="color:	#808080;font-weight:1;font-size:18px;font-family:courier new" href=".">Back</a></h2>
+                <p><input style="background-color:black;color:#68f3f8;" 
+                    type="text" name="email" placeholder="123@gmail.com"></p>
+                <p><input style="background-color:black;color:#68f3f8;" 
+                    type="password" name="password" placeholder="123"></p>
+                <button class="butt" style="color:#90ee90;opacity:90%;" 
+                    type="submit">Login</button>
                 <form>
                 
         </div>
@@ -73,5 +80,4 @@
     </script>
     <script src="js/app.js"></script>
 </body>
-
 </html>

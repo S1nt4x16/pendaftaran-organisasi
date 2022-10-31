@@ -16,10 +16,12 @@ class PendaftaranController extends Controller
         $pendaftaran = DB::table('pendaftarans as a')
         ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
         ->join('tm_divisis as c', 'a.id_divisi', '=', 'c.id')
-        ->select('a.id', 'b.periode', 'a.nama_lengkap', 'a.id_no', 'c.divisi', 'a.created_at', 'a.updated_at')
+        ->select('a.id', 'b.periode', 'a.nama_lengkap', 'a.id_no',
+             'c.divisi', 'a.created_at', 'a.updated_at')
         ->get();
 
-        return view('crud_pendaftaran.index_pendaftaran', ["pendaftaran" => $pendaftaran]);
+        return view('crud_pendaftaran.index_pendaftaran', 
+            ["pendaftaran" => $pendaftaran]);
     }
 
     public function excelexport(){
@@ -27,7 +29,8 @@ class PendaftaranController extends Controller
         $data = DB::table('pendaftarans as a')
         ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
         ->join('tm_divisis as c', 'a.id_divisi', '=', 'c.id')
-        ->select('b.periode', 'a.nama_lengkap', 'a.id_no', 'c.divisi', 'a.created_at', 'a.updated_at')
+        ->select('b.periode', 'a.nama_lengkap', 'a.id_no',
+             'c.divisi', 'a.created_at', 'a.updated_at')
         ->get();
         return Excel::download(new ExcelExport($data), 'CalonAnggotaKopasusIT.xlsx');
     }
@@ -35,7 +38,10 @@ class PendaftaranController extends Controller
     public function edit($id) 
     {
         $pendaftaran = DB::table('pendaftarans')
-            ->select('nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'id_agama', 'id_kelas', 'id_walas', 'id_divisi', 'alasan', 'id_izin_ortu', 'hp_siswa', 'hp_ortu', 'akun_ig')
+            ->select('nama_lengkap', 'tempat_lahir', 
+                'tanggal_lahir', 'jenis_kelamin', 'id_agama', 
+                'id_kelas', 'id_walas', 'id_divisi', 'alasan', 'id_izin_ortu', 
+                'hp_siswa', 'hp_ortu', 'akun_ig')
             ->where('id',$id)
             ->first();
         $agama = DB::table('tm_agamas')

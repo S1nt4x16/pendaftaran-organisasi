@@ -2,7 +2,8 @@
     <form id="logout-form" action="{{ url('/logout') }}" method="post" style="display: none;">
         @csrf
     </form>
-    <a class="nav-link" style="color: #f13f3f" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <a class="nav-link" style="color: #f13f3f" href="{{ url('/logout') }}" 
+        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <i class="nav-icon cil-account-logout" style="color: #f13f3f"></i>
         Logout
     </a>
