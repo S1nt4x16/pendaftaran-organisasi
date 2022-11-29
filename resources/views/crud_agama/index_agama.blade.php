@@ -36,7 +36,9 @@ Table Master Agama
                     <td>
                         
                             <a href="{{ url('/agama/edit/'.$a->id) }}" class="btn btn-success">Edit</a> 
-                            <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $a->agama }}" data-coreui-url="{{ url('agama/delete/'.$a->id) }}">Delete</button>
+                            <button type="button" class="btn btn-danger" data-coreui-toggle="modal" 
+                                data-coreui-target="#hapus" data-coreui-name="{{ $a->agama }}" 
+                                data-coreui-url="{{ url('agama/delete/'.$a->id) }}">Delete</button>
                         
                     </td> 
                 </tr>
@@ -45,12 +47,14 @@ Table Master Agama
         </table>
     </div>
 </div>
-<div class="modal fade" id="hapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="hapus" tabindex="-1" aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-coreui-dismiss="modal" 
+            aria-label="Close"></button>
         </div>
         <form action="" method="post" id="form-hapus">
             @csrf
@@ -60,7 +64,8 @@ Table Master Agama
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" 
+                    data-coreui-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-danger">Yes</button>
             </div>
         </form>

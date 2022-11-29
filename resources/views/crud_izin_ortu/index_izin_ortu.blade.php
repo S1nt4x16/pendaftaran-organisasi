@@ -35,7 +35,9 @@ Table Master Izin Orang Tua
                 <td>{{ $io->created_at }}</td>
                 <td>
                     <a href="{{ url('/izin_ortu/edit/'.$io->id) }}" class="btn btn-success">Edit</a> 
-                        <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $io->izin_ortu }}" data-coreui-url="{{ url('izin_ortu/delete/'.$io->id) }}">Delete</button>
+                        <button type="button" class="btn btn-danger" data-coreui-toggle="modal" 
+                            data-coreui-target="#hapus" data-coreui-name="{{ $io->izin_ortu }}" 
+                            data-coreui-url="{{ url('izin_ortu/delete/'.$io->id) }}">Delete</button>
                 </td> 
             </tr>
             @endforeach

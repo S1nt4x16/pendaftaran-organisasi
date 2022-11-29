@@ -19,7 +19,9 @@ Welcome To Create Periode
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Periode</label>
-                            <input type="number" class="form-control" name="periode" id="exampleInputPassword1" max="{{ now()->addYear(3)->format('Y') }}" value="{{ now()->format('Y') }}">
+                            <input type="number" class="form-control" name="periode" 
+                                id="exampleInputPassword1" max="{{ now()->addYear(3)->format('Y') }}" 
+                                value="{{ now()->format('Y') }}">
                         </div>
                         <input type="reset" class="btn btn-md btn-warning">
                         <button type="submit" name="simpan" class="btn btn-md btn-primary">Simpan</button>
@@ -29,5 +31,7 @@ Welcome To Create Periode
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
+    crossorigin="anonymous"></script>
 @endsection

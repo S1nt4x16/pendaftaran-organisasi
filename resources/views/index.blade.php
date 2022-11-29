@@ -102,7 +102,7 @@
 
                     <center>
                         <div class="col-4" style="margin-top:30px;">
-                            <a href="http://127.0.0.1:8000/login" style="color:#68f3f8;">
+                            <a href="{{ route('login') }}" style="color:#68f3f8;">
                             <i class="fas fa-plus"></i>Login</a>
                         </div>
                     </center>

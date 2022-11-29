@@ -37,11 +37,12 @@ Table Master Divisi
                     <td>{{ $d->created_at }}</td>
                     <td>
                         <a href="{{ url('/divisi/edit/'.$d->id) }}" class="btn btn-success">Edit</a> 
-                        <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $d->divisi .' '.$d->divisi_lengkap }}" data-coreui-url="{{ url('divisi/delete/'.$d->id) }}">Delete</button>
+                        <button type="button" class="btn btn-danger" data-coreui-toggle="modal" 
+                            data-coreui-target="#hapus" data-coreui-name="{{ $d->divisi .' '.$d->divisi_lengkap }}"
+                            data-coreui-url="{{ url('divisi/delete/'.$d->id) }}">Delete</button>
                     </td> 
                 </tr>
                 @endforeach
-                
             </tbody>
         </table>
     </div>

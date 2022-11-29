@@ -33,7 +33,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth'])->group(function () 
 {
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -91,12 +91,20 @@ Route::middleware(['auth'])->group(function ()
         Route::delete('/delete/{id}', [WalasController::class, 'delete']);
     });
 
-    Route::prefix('pendaftaran')->group(function () {
-        Route::get('/', [PendaftaranController::class, 'index'])->name('pendaftaran_master');
-        Route::get('/edit/{id}', [PendaftaranController::class, 'edit']);
-        Route::post('/update', [PendaftaranController::class, 'update']);
-        Route::delete('/delete/{id}', [PendaftaranController::class, 'delete']);
-        Route::get('/excelexport', [PendaftaranController::class, 'excelexport'])->name('excelexport');
+    Route::prefix('pendaftaran')->group(function () 
+    {
+        Route::get('/', 
+            [PendaftaranController::class, 'index'])
+            ->name('pendaftaran_master');
+        Route::get('/edit/{id}', 
+            [PendaftaranController::class, 'edit']);
+        Route::post('/update', 
+            [PendaftaranController::class, 'update']);
+        Route::delete('/delete/{id}', 
+            [PendaftaranController::class, 'delete']);
+        Route::get('/excelexport', 
+            [PendaftaranController::class, 'excelexport'])
+            ->name('excelexport');
     });
 
 

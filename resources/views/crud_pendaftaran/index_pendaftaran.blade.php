@@ -43,7 +43,9 @@ Pendaftaran
                       <td>{{ $pf->updated_at ?? $pf->created_at }}</td>
                       <td>
                           <a href="{{ url('/pendaftaran/edit/'.$pf->id) }}" class="btn btn-success">Edit</a> 
-                          <button type="button" class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#hapus" data-coreui-name="{{ $pf->nama_lengkap }}" data-coreui-url="{{ url('pendaftaran/delete/'.$pf->id) }}">Delete</button>
+                          <button type="button" class="btn btn-danger" data-coreui-toggle="modal" 
+                            data-coreui-target="#hapus" data-coreui-name="{{ $pf->nama_lengkap }}" 
+                            data-coreui-url="{{ url('pendaftaran/delete/'.$pf->id) }}">Delete</button>
                       </td> 
                   </tr>
                   @endforeach
