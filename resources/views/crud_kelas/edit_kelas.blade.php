@@ -8,7 +8,7 @@ Welcome To Edit Kelas
 <div class="card">
     <div class="card-header">
         <h3>
-            Edit Divisi
+            Edit Kelas
         </h3>
     </div>
     <div class="card-body">

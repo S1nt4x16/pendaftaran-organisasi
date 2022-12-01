@@ -52,7 +52,8 @@ class ControllerPendaftaran extends Controller
         $akunIg = $request->input('akun_ig');
 
         $validasi = DB::table('pendaftarans')
-            ->where([['nama_lengkap', $request->nama_lengkap], ['id_divisi', $request->divisi]])
+            ->where([['nama_lengkap', $request->nama_lengkap],
+             ['id_divisi', $request->divisi]])
             ->count();
         if (!empty($validasi)) {
             return redirect()->back()->with('error', 'Gagal Menambahkan Data, Data Sudah Ada / Sudah Terdaftar');

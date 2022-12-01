@@ -18,11 +18,13 @@ Welcome To Create Agama
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Agama</label>
-                            <input type="text" class="form-control" name="agama" id="exampleInputPassword1">
+                            <input type="text" class="form-control" 
+                                name="agama" id="exampleInputPassword1">
                           </div>
                         <div>
                             <input type="reset" class="btn btn-md btn-warning">
-                            <button type="submit" name="simpan" class="btn btn-md btn-primary">Simpan</button>
+                            <button type="submit" name="simpan" 
+                                class="btn btn-md btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>
