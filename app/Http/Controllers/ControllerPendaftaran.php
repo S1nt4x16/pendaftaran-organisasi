@@ -53,12 +53,8 @@ class ControllerPendaftaran extends Controller
 
         $validasi = DB::table('pendaftarans')
             ->where([['nama_lengkap', $request->nama_lengkap],
-<<<<<<< HEAD
             ['id_divisi', $request->divisi],
             ['hp_siswa', $request->hp_siswa]])
-=======
-             ['id_divisi', $request->divisi]])
->>>>>>> 910dd975960f0c86902f87460c2341248ca11a2e
             ->count();
         if (!empty($validasi)) {
             return redirect()->back()->with('error', 'Gagal Menambahkan Data, Data Sudah Ada / Sudah Terdaftar');
