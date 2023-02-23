@@ -114,7 +114,7 @@
                 </div>
                 
                     <div class="card-body">
-                        <form action="" method="post" style="color:black;">
+                        <form action="{{ url('store') }}" method="post" style="color:black;" id="formDaftar">
                             @csrf
                             <div class="mb-2">
                                 <label style="font-family:courier new;color:#68f3f8;" for="nama_lengkap" 
@@ -271,16 +271,13 @@
               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="post" id="form-konfirmasi">
-                @csrf
                 <div class="modal-body">
                     <div id="results"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Yes</button>
+                    <button id="yes" class="btn btn-success">Yes</button>
                 </div>
-            </form>
           </div>
         </div>
       </div>
@@ -294,44 +291,68 @@
             konfirmasi.addEventListener('show.coreui.modal', event => {
               const button = event.relatedTarget
               const name = button.getAttribute('data-coreui-name')
-              const url = button.getAttribute('data-coreui-url')
               const title = konfirmasi.querySelector('.modal-title')
               const tanya = konfirmasi.querySelector('.modal-body #tanya')
-              const formKonfirmasi = konfirmasi.querySelector('#form-konfirmasi')
             
-              title.textContent = name 
-              formKonfirmasi.action = url
+              title.textContent = name
+            
             })
         </script>
         <script>
+
+                var name = null;
+                var tmp = null;
+                var tgl = null;
+                var jkl = null;
+                var ag = null;
+                var kl = null;
+                var dv = null;
+                var iz = null;
+                var wl = null;
+                var al = null;
+                var hpsiswa = null;
+                var hportu = null;
+                var ig = null;
+            
+               
+
             $("#btn").click(function(){
-                var name = $("#name").val();
-                var tmp = $("#tmp").val();
-                var tgl = $("#tgl").val();
-                var jkl = $("#jkl option:selected").text();
-                var ag = $("#ag option:selected").text();
-                var kl = $("#kl option:selected").text();
-                var dv = $("#dv option:selected").text();
-                var iz = $("#iz option:selected").text();
-                var wl = $("#wl option:selected").text();
-                var al = $("#al").val();
-                var hpsiswa = $("#hpsiswa").val();
-                var hportu = $("#hportu").val();
-                var ig = $("#ig").val();
-                $("#results").html("<div class='alert alert-success'>" + "Nama Lengkap :" + " " + name + "</div>" +
-                    "<div class='alert alert-success'>" + "Tempat Lahir :" + " " + tmp + "</div>" +
-                    "<div class='alert alert-success'>" + "Tanggal Lahir :" + " " + tgl + "</div>" +
-                    "<div class='alert alert-success'>" + "Jenis Kelamin :" + " " + jkl + "</div>" +
-                    "<div class='alert alert-success'>" + "Agama :" + " " + ag + "</div>" +
-                    "<div class='alert alert-success'>" + "Divisi :" + " " + dv + "</div>" +
-                    "<div class='alert alert-success'>" + "Izin Orang Tua :" + " " + iz + "</div>" +
-                    "<div class='alert alert-success'>" + "Walikelas :" + " " + wl + "</div>" +
-                    "<div class='alert alert-success'>" + "Alasan :" + " " + al + "</div>" +
-                    "<div class='alert alert-success'>" + "Nomor HP Siswa :" + " " + hpsiswa + "</div>" +
-                    "<div class='alert alert-success'>" + "Nomor HP Orang Tua :" + " " + hportu + "</div>" +
-                    "<div class='alert alert-success'>" + "Akun IG :" + " " + ig + "</div>" 
+
+                name = $('#name').val();
+                tmp = $("#tmp").val();
+                tgl = $("#tgl").val();
+                jkl = $("#jkl option:selected").text();
+                ag = $("#ag option:selected").text();
+                kl = $("#kl option:selected").text();
+                dv = $("#dv option:selected").text();
+                iz = $("#iz option:selected").text();
+                wl = $("#wl option:selected").text();
+                al = $("#al").val();
+                hpsiswa = $("#hpsiswa").val();
+                hportu = $("#hportu").val();
+                ig = $("#ig").val();
+
+                $("#results").html("<div class='alert alert-success'>Nama Lengkap : " + name + "</div>" +
+                    "<div class='alert alert-success'>Tempat Lahir : " + tmp + "</div>" +
+                    "<div class='alert alert-success'>Tanggal Lahir : " + tgl + "</div>" +
+                    "<div class='alert alert-success'>Jenis Kelamin : " + jkl + "</div>" +
+                    "<div class='alert alert-success'>Agama : " + ag + "</div>" +
+                    "<div class='alert alert-success'>Divisi : " + dv + "</div>" +
+                    "<div class='alert alert-success'>Izin Orang Tua : " + iz + "</div>" +
+                    "<div class='alert alert-success'>Walikelas : " + wl + "</div>" +
+                    "<div class='alert alert-success'>Alasan : " + al + "</div>" +
+                    "<div class='alert alert-success'>Nomor HP Siswa : " + hpsiswa + "</div>" +
+                    "<div class='alert alert-success'>Nomor HP Orang Tua : " + hportu + "</div>" +
+                    "<div class='alert alert-success'>Akun Instagram : " + ig + "</div>" 
                 )
             })
+
+        </script>
+
+        <script>
+            $("#yes").click(function() {
+                $('#formDaftar').submit();
+            });
         </script>
 </body>
 
