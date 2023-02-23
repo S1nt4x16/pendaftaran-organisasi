@@ -121,7 +121,7 @@
                                     class="form-label">
                                     Nama Lengkap
                                 </label>
-                                <input type="text" id="name" name="nama_lengkap" class="form-control" 
+                                <input type="text" id="name" name="nama_lengkap" class="form-control"
                                     style="background-color:black;color:#68f3f8;font-family:courier new" 
                                     placeholder="Masukkan Nama Lengkap Anda" required autofocus>
                             </div>
@@ -139,7 +139,7 @@
                                     class="form-label">
                                     Tanggal Lahir
                                 </label>
-                                <input type="date" name="tanggal_lahir" id="tgl" class="form-control" 
+                                <input type="date" name="tanggal_lahir" id="tgl" class="form-control"
                                     style="background-color:black;font-family:courier new;color:#68f3f8;" 
                                     placeholder="Tanggal Lahir" required>
                             </div>
@@ -354,6 +354,8 @@
                 $('#formDaftar').submit();
             });
         </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

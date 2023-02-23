@@ -20,7 +20,12 @@ class PendaftaranController extends Controller
              'c.divisi', 'a.created_at', 'a.updated_at')
         ->get();
 
+<<<<<<< HEAD
         return view('crud_pendaftaran.index_pendaftaran', ["pendaftaran" => $pendaftaran]);
+=======
+        return view('crud_pendaftaran.index_pendaftaran', 
+            ["pendaftaran" => $pendaftaran]);
+>>>>>>> 910dd975960f0c86902f87460c2341248ca11a2e
     }
 
     public function excelexport(){
