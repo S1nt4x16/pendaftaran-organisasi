@@ -114,7 +114,7 @@
                 </div>
                 
                     <div class="card-body">
-                        <form action="{{ url('store') }}" method="post" style="color:black;" id="formDaftar">
+                        <form action="{{ url('store') }}" method="post" style="color:black;" id="formDaftar" required>
                             @csrf
                             <div class="mb-2">
                                 <label style="font-family:courier new;color:#68f3f8;" for="nama_lengkap" 
@@ -254,7 +254,7 @@
                             </div>
                             <div class="mt-4">
                                 <input  type="reset" class="btn btn-md btn-dark">
-                                <button type="button" id="btn" class="btn btn-md btn-dark" style="color:#68f3f8;" data-coreui-toggle="modal" data-coreui-target="#konfirmasi" data-coreui-name="Apakah Data Anda Sudah Sesuai ?" data-coreui-url="{{ url('store') }}">
+                                <button type="button" id="btn" class="btn btn-md btn-dark" style="color:#68f3f8;" data-coreui-toggle="modal" data-coreui-target="#konfirmasi" data-coreui-name="Apakah Data Anda Sudah Sesuai ?" data-coreui-url="{{ url('store') }}" onClick="validate()" required>
                                     Simpan
                                 </button>
                             </div>
@@ -281,6 +281,16 @@
           </div>
         </div>
       </div>
+
+    <script>
+        function validateForm() {
+  var x = document.forms["formDaftar"]["nama_loengkap"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+    </script>
 
         <script src="{{ asset('coreui/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
         <script src="{{ asset('coreui/vendors/simplebar/js/simplebar.min.js') }}"></script>

@@ -37,6 +37,7 @@ class ControllerPendaftaran extends Controller
 
     public function store(Request $request)
     {
+
         $namaLengkap = $request->input('nama_lengkap');
         $tempatLahir = $request->input('tempat_lahir');
         $tanggalLahir = $request->input('tanggal_lahir');
