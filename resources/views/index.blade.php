@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('coreui/css/style.min.css') }}">
     <link rel="stylesheet" href="{{ asset('coreui/vendors/simplebar/css/simplebar.css') }}">
     <link rel="stylesheet" href="{{ asset('coreui/vendors/@coreui/icons/css/free.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('sweetalert2/dist/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="{{ asset('images/fav.png') }}" type="image/x-icon">
     <style>
@@ -114,7 +115,7 @@
                 </div>
                 
                     <div class="card-body">
-                        <form action="{{ url('store') }}" method="post" style="color:black;" id="formDaftar" required>
+                        <form action="{{ url('store') }}" method="post" style="color:black;" id="formDaftar">
                             @csrf
                             <div class="mb-2">
                                 <label style="font-family:courier new;color:#68f3f8;" for="nama_lengkap" 
@@ -254,7 +255,7 @@
                             </div>
                             <div class="mt-4">
                                 <input  type="reset" class="btn btn-md btn-dark">
-                                <button type="button" id="btn" class="btn btn-md btn-dark" style="color:#68f3f8;" data-coreui-toggle="modal" data-coreui-target="#konfirmasi" data-coreui-name="Apakah Data Anda Sudah Sesuai ?" data-coreui-url="{{ url('store') }}" onClick="validate()" required>
+                                <button type="button" id="btn" class="btn btn-md btn-dark" onclick="OnInput()" style="color:#68f3f8;">
                                     Simpan
                                 </button>
                             </div>
@@ -268,7 +269,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Data</h5>
                 <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
             </div>
                 <div class="modal-body">
@@ -283,31 +284,14 @@
       </div>
 
     <script>
-        function validateForm() {
-  var x = document.forms["formDaftar"]["nama_loengkap"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
+        
     </script>
 
-        <script src="{{ asset('coreui/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
+        <script src="{{ asset('coreui/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></scrip>
         <script src="{{ asset('coreui/vendors/simplebar/js/simplebar.min.js') }}"></script>
         <script src="{{ asset('jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('sweetalert2/dist/sweetalert2.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script>
-            const konfirmasi = document.getElementById('konfirmasi')
-            konfirmasi.addEventListener('show.coreui.modal', event => {
-              const button = event.relatedTarget
-              const name = button.getAttribute('data-coreui-name')
-              const title = konfirmasi.querySelector('.modal-title')
-              const tanya = konfirmasi.querySelector('.modal-body #tanya')
-            
-              title.textContent = name
-            
-            })
-        </script>
         <script>
 
                 var name = null;
@@ -363,6 +347,49 @@
             $("#yes").click(function() {
                 $('#formDaftar').submit();
             });
+        </script>
+
+        <script>
+        function OnInput() 
+        {
+
+            tgl = $("#tgl").val();
+            jkl = $("#jkl").val();
+            ag = $("#ag option:selected").text();
+            kl = $("#kl option:selected").text();
+            dv = $("#dv option:selected").text();
+            iz = $("#iz option:selected").text();
+            wl = $("#wl option:selected").text();
+            var x = document.forms["formDaftar"]["name", jkl , "tmp", "jkl", "al", "hpsiswa", "hportu", iz , dv , wl , kl , ag , "ig"].value;
+
+            if( x == "" )
+            {
+            
+            Swal.fire({
+                title: 'Error!',
+                text: 'Masukan Data Dengan Lengkap!',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+
+            })
+
+            } if ( tgl == "" )
+
+            {
+                
+            Swal.fire({
+                title: 'Error!',
+                text: 'Masukan Data!',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+
+            } else {
+
+            $('#konfirmasi').modal('show');
+            }
+
+        }
         </script>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
