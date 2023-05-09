@@ -50,7 +50,7 @@
 
 <body>
     <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-        <source src="videos/bg1.mp4" type="video/mp4">
+        <source src="videos/3.mp4" type="video/mp4">
     </video>
 
     <div class="container">
