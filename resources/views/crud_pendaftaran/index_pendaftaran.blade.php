@@ -25,6 +25,7 @@ Pendaftaran
                         <th>No Pendaftaran</th>
                         <th>Nama</th>
                         <th>Divisi</th>
+                        <th>Nomor HP Siswa</th>
                         <th>Update</th>
                         <th>Action</th>
                     </tr>
@@ -38,8 +39,9 @@ Pendaftaran
                       <td>{{ $no++ }}</td>
                       <td>{{ $pf->periode }}</td>
                       <td>{{ $pf->id_no }}</td>
-                      <td>{{ $pf->nama_lengkap}}</td>
+                      <td>{{ $pf->nama_lengkap }}</td>
                       <td>{{ $pf->divisi }}</td>
+                      <td>{{ $pf->hp_siswa }}</td>
                       <td>{{ $pf->updated_at ?? $pf->created_at }}</td>
                       <td>
                           <a href="{{ url('/pendaftaran/edit/'.$pf->id) }}" class="btn btn-success">Edit</a> 

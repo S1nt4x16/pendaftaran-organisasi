@@ -22,8 +22,8 @@ return new class extends Migration
             $table->date('tanggal_lahir'); 
             $table->enum('jenis_kelamin', ['L', 'P']); 
             $table->tinyInteger('id_agama'); 
-            $table->tinyInteger('id_kelas'); 
-            $table->tinyInteger('id_walas'); 
+            $table->tinyInteger('id_kelas')->nullable(); 
+            $table->tinyInteger('id_walas')->nullable(); 
             $table->tinyInteger('id_divisi'); 
             $table->text('alasan'); 
             $table->tinyInteger('id_izin_ortu'); 

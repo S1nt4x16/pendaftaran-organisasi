@@ -16,7 +16,7 @@ class PendaftaranController extends Controller
         $pendaftaran = DB::table('pendaftarans as a')
         ->join('tm_periodes as b', 'a.id_periode', '=', 'b.id')
         ->join('tm_divisis as c', 'a.id_divisi', '=', 'c.id')
-        ->select('a.id', 'b.periode', 'a.nama_lengkap', 'a.id_no',
+        ->select('a.id', 'b.periode', 'a.nama_lengkap', 'a.id_no', 'a.hp_siswa',
              'c.divisi', 'a.created_at', 'a.updated_at')
         ->get();
         return view('crud_pendaftaran.index_pendaftaran', ["pendaftaran" => $pendaftaran]);

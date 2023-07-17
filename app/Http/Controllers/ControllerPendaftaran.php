@@ -43,10 +43,8 @@ class ControllerPendaftaran extends Controller
         $tanggalLahir = $request->input('tanggal_lahir');
         $jenisKelamin = $request->input('jenis_kelamin');
         $agama = $request->input('agama');
-        $kelas = $request->input('kelas');
         $divisi = $request->input('divisi');
         $izinOrtu = $request->input('izin_ortu');
-        $walas = $request->input('walas');
         $alasan = $request->input('alasan');
         $hpSiswa = $request->input('hp_siswa');
         $hpOrtu = $request->input('hp_ortu');
@@ -77,10 +75,8 @@ class ControllerPendaftaran extends Controller
                 'tanggal_lahir' => $tanggalLahir,
                 'jenis_kelamin' => $jenisKelamin,
                 'id_agama' => $agama,
-                'id_kelas' => $kelas,
                 'id_divisi' => $divisi,
                 'id_izin_ortu' => $izinOrtu,
-                'id_walas' => $walas,
                 'alasan' => $alasan,
                 'hp_siswa' => $hpSiswa,
                 'hp_ortu' => $hpOrtu,

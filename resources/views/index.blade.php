@@ -100,18 +100,7 @@
                             </div>
                     </h1>
                     <hr style="color:#68f3f8;opacity:70%;">
-
-                    <center>
-                        <div class="col-4" style="margin-top:30px;">
-                            <a href="{{ route('login') }}" style="color:#68f3f8;">
-                            <i class="fas fa-plus"></i>Login</a>
-                        </div>
-                    </center>
-
-                    <br>
-
                     @include('layouts.message')
-
                 </div>
                 
                     <div class="card-body">
@@ -178,8 +167,8 @@
                                 </label>
                                 <select class="form-select" name="kelas" 
                                     style="background-color:black;font-family:courier new;color:#68f3f8;" 
-                                    aria-label="Default select example" id="kl" required>
-                                    <option value="" selected>--Pilih--</option>
+                                    aria-label="Default select example" id="kl">
+                                    <option value="" selected>--Bisa Kosong--</option>
                                     @foreach($kelas as $k)
                                     <option value="{{ $k->id }}">{{ $k->kelas }}</option>
                                     @endforeach
@@ -218,8 +207,8 @@
                                     for="walas" class="form-label">Walas</label>
                                 <select class="form-select" name="walas" 
                                     style="background-color:black;font-family:courier new;color:#68f3f8;" 
-                                    aria-label="Default select example" id="wl" required>
-                                    <option value="" selected>--Pilih--</option>
+                                    aria-label="Default select example" id="wl">
+                                    <option value="" selected>--Bisa Kosong--</option>
                                     @foreach($walas as $w)
                                     <option value="{{ $w->id }}">{{ $w->walas }}</option>
                                     @endforeach
@@ -237,7 +226,7 @@
                                     for="hp_siswa" class="form-label">Nomor Hp Siswa</label>
                                 <input type="text" name="hp_siswa" id="hpsiswa" class="form-control" 
                                     style="background-color:black;font-family:courier new;color:#68f3f8;" 
-                                    placeholder="Nomor Hp Siswa" required>
+                                    placeholder="Nomor Hp Siswa (Nomor Whatsapp)" required>
                             </div>
                             <div class="mb-2">
                                 <label style="font-family:courier new;color:#68f3f8;" 
@@ -331,6 +320,7 @@
                     "<div class='alert alert-success'>Tanggal Lahir : " + tgl + "</div>" +
                     "<div class='alert alert-success'>Jenis Kelamin : " + jkl + "</div>" +
                     "<div class='alert alert-success'>Agama : " + ag + "</div>" +
+                    "<div class='alert alert-success'>Kelas : " + kl + "</div>" +
                     "<div class='alert alert-success'>Divisi : " + dv + "</div>" +
                     "<div class='alert alert-success'>Izin Orang Tua : " + iz + "</div>" +
                     "<div class='alert alert-success'>Walikelas : " + wl + "</div>" +
@@ -356,11 +346,9 @@
             tgl = $("#tgl").val();
             jkl = $("#jkl").val();
             ag = $("#ag option:selected").text();
-            kl = $("#kl option:selected").text();
             dv = $("#dv option:selected").text();
             iz = $("#iz option:selected").text();
-            wl = $("#wl option:selected").text();
-            var x = document.forms["formDaftar"]["name", jkl , "tmp", "jkl", "al", "hpsiswa", "hportu", iz , dv , wl , kl , ag , "ig"].value;
+            var x = document.forms["formDaftar"]["name", jkl , "tmp", "jkl", "al", "hpsiswa", "hportu", iz , dv , ag , "ig"].value;
 
             if( x == "" )
             {
